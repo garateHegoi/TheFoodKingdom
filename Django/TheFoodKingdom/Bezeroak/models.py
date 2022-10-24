@@ -13,6 +13,9 @@ class Bezeroak(models.Model):
    abizena= models.CharField(max_length=50)
    helbidea= models.CharField(max_length=50)
    telefono_zenbakia= models.IntegerField(max_length=9)
+   pk = models.IntegerField(max_length=5)
+   herria = models.CharField(max_length=50)
+   probintzia = models.CharField(max_length=50)
    janari_id= models.ForeignKey(Janariak, on_delete=models.CASCADE)
 
    def __str__(self):
