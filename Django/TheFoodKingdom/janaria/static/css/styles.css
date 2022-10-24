@@ -1,0 +1,41 @@
+.nav{
+    background-color: #0038A8;
+    height: 120px;
+    font-family: Gabriela;
+    font-size: 48px;
+}
+
+.nav_title{
+    font-size: 48px;
+    color: #fff;
+    padding: 1em;
+    margin-top: 5px;
+    margin-left: 50px;
+    text-decoration:none;
+}
+
+.nav_title:hover {
+    color: #fff;
+}
+
+.nav_elements{
+    font-size: 40px;
+    color: #fff;
+    padding: 1em;
+    margin-right: 100px;
+    text-decoration:none; 
+}
+
+.nav_elements:hover {
+    color: #F99245;
+}
+
+.nav_elements_margins{
+    margin-left: 250px;
+}  
+
+.user_icon{
+    width: 20%;
+    color: #fff;
+    margin-left: 65%;
+}
