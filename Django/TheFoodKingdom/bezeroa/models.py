@@ -1,17 +1,16 @@
 from django.db import models
-
-from Django.TheFoodKingdom.janaria.models import Janariak
-
+from django.core.validators import MinValueValidator, MaxValueValidator
 
 # Create your models here.
 
 class Bezeroak(models.Model):
    dni= models.CharField(primary_key=True, max_length=50)
-   telefono_zenbakia= models.IntegerField(max_length=9)
-   pk = models.IntegerField(max_length=5)
+   telefono_zenbakia= models.IntegerField(validators=[
+        MinValueValidator(9), MaxValueValidator(9)])
+   posta_kodea = models.IntegerField(validators=[
+        MinValueValidator(5), MaxValueValidator(5)])
    herria = models.CharField(max_length=50)
    probintzia = models.CharField(max_length=50)
-   janari_id= models.ForeignKey(Janariak, on_delete=models.CASCADE)
 
    def __str__(self):
        return '%s' % self.izena
@@ -31,7 +30,7 @@ class Erabiltzaileak(models.Model):
    is_staff = models.CharField(max_length=50)
    is_active = models.CharField(max_length=50)
    date_joinded = models.CharField(max_length=50)
-   bezero_dni = models.ForeignKey(Bezeroak, on_delete=models.CASCADE)
+   bezero_dni = models.ForeignKey(Bezeroak, on_delete=models.CASCADE, null=True)
 
    def __str__(self):
        return '%s' % self.username

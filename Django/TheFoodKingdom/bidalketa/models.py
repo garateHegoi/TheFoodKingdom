@@ -1,7 +1,8 @@
 from django.db import models
+from django.core.validators import MinValueValidator, MaxValueValidator
 
-from Django.TheFoodKingdom.bezeroa.models import Bezeroak
-from Django.TheFoodKingdom.erosketa.models import Erosketak
+from bezeroa.models import Bezeroak
+from erosketa.models import Erosketak
 
 
 # Create your models here.
@@ -17,9 +18,10 @@ class Bidalketak(models.Model):
 
 
 class Txartelak(models.Model):
-    zenbakia = models.IntegerField(primary_key=True, max_length=16)
-    iraungitze_data = models.DateField(null=True)
-    cvv = models.IntegerField(max_length=3)
+    zenbakia = models.IntegerField(primary_key=True)
+    iraungitze_data = models.DateField()
+    cvv = models.IntegerField(validators=[
+        MinValueValidator(3), MaxValueValidator(3)])
     bezero_dni = models.ForeignKey(Bezeroak, on_delete=models.CASCADE)
     def __str__(self):
         return '%s' % self.zenbakia
