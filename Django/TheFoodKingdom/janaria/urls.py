@@ -5,4 +5,5 @@ urlpatterns=[
     path('',views.index,name='index'),
     path('karta/',views.karta,name='karta'),
     path('kokapena/',views.kokapena,name='kokapena'),
+    path('erregistroa/',views.erregistroa,name='erregistroa'),
     ]
