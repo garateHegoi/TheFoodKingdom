@@ -1,5 +1,7 @@
 from django.shortcuts import render, redirect
 
+from bezeroa.forms import ErregistroaForm
+
 # Create your views here.
 def index(request):
     return render(request, 'index.html')
@@ -13,3 +15,6 @@ def karta(request):
 
 def kokapena(request):
     return render(request, 'kokapena.html')
+
+def erregistroa(request):
+    return render(request, 'erregistroa.html')
