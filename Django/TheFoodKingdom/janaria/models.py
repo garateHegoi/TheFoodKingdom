@@ -9,6 +9,8 @@ class Janariak(models.Model):
    prezioa= models.CharField(max_length=5)
    mota= models.CharField(max_length=50)
    alergenoak= models.CharField(max_length=50)
+   argazki_url = models.CharField(max_length=255)
+
 
    def __str__(self):
        return '%s' % self.izena

@@ -20,3 +20,32 @@ def logout(request):
 
 https://www.tutorialspoint.com/django/django_sessions.htm
 
+
+-----------------------------------
+
+DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+    },
+    'new': {
+        'ENGINE': 'django.db.backends.mysql',
+        'NAME': 'tFnXEEpcjQ',
+        'USER': 'tFnXEEpcjQ',
+        'PASSWORD': 'UW9BWCT8m2',
+        'HOST': 'remotemysql.com',
+        'PORT': '3306',
+    }
+}
+
+
+python manage.py migrate --database=new
+
+
+https://pythonfusion.com/switch-database-django/
+
+
+
+
+
+
