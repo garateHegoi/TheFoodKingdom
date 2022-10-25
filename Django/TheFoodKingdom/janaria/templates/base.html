@@ -17,13 +17,14 @@
 </head>
 <body>
   {% with request.resolver_match.url_name as url_name %}
-<nav class="navbar navbar-expand-lg navbar-light">
+<nav class="navbar navbar-expand-lg navbar-light navbar_style">
   <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
   </button>
-  <a class="navbar-brand {% if url_name == 'index' %} active {% endif %}" href="{% url 'index' %}" aria-current="index">The Food Kingdom</a>
-
-  <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
+    <div class="nav_div">
+        <a class="navbar-brand {% if url_name == 'index' %} active {% endif %}" href="{% url 'index' %}" aria-current="index">The Food Kingdom</a>
+    </div>
+  <div class="collapse navbar-collapse elements" id="navbarTogglerDemo02">
     <ul class="navbar-nav mr-auto mt-2 mt-md-0">
       <li class="nav-item">
         <a class="nav-link {% if url_name == 'karta' %} active {% endif %}" href="{% url 'karta' %}" aria-current="karta">Karta</a>
@@ -32,6 +33,7 @@
         <a class="nav-link {% if url_name == 'kokapena' %} active {% endif %}" href="{% url 'kokapena' %}" aria-current="kokapena">Kokapena</a>
       </li>
     </ul>
+      <img class="user_icon" src="{% static 'img/usuario.png'%}">
   </div>
 </nav>
 {% endwith %}
@@ -39,8 +41,8 @@
     
 {% endblock content %}
 <footer class="foot">
-    <div class="row div_height">
-        <div class="col-5 footer_div">
+    <div class="d-flex flex-row div_height">
+        <div class="col-5 footer_div ">
             <img class="copyright_img" src="{% static 'img/copyright.png'%}">
             <a class="footer_title" href="#">The Food Kingdom</a>
         </div>
