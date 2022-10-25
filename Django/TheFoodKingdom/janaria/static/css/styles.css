@@ -100,3 +100,15 @@ nav.navbar {
 .elements{
 padding-left: 10%;
 }
+
+
+
+/* Register */
+.botoiUrdina{
+    background-color: #0038A8; 
+    color: white;
+}
+
+.ikonoa-input{
+    font-family:Gabriela, FontAwesome;
+}
