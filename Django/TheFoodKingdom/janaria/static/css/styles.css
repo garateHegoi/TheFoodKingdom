@@ -2,48 +2,10 @@
     font-family: Gabriela;
 }
 
-.nav{
-    background-color: #0038A8;
-    height: 120px;
-    font-size: 48px;
-}
-
-.nav_title{
-    font-size: 48px;
-    color: #fff;
-    padding: 1em;
-    margin-top: 5px;
-    margin-left: 30px;
-    text-decoration: none;
-}
-
-.nav_title:hover {
-    color: #fff;
-    text-decoration: none;
-
-}
-
-.nav_elements{
-    font-size: 40px;
-    color: #fff;
-    padding: 1em;
-    margin-right: 100px;
-    text-decoration:none; 
-}
-
-.nav_elements:hover {
-    color: #F99245;
-    text-decoration: none;
-}
-
-.nav_elements_margins{
-    margin-left: 200px;
-}  
-
 .user_icon{
-    width: 17%;
+    max-width: 60px;
     color: #fff;
-    margin-left: 65%;
+    margin-right: 5%
 }
 
 .content_wrapper {
@@ -120,4 +82,34 @@
 .terminoak{
     padding: 1em;
     margin-left: -100px;
+}
+
+nav a{
+    color: #fff !important;
+}
+
+/* cambiar color de letra */
+nav ul li a{
+    color: #fff !important;
+    font-size: 30px;
+    margin-left: 150px;
+}
+
+nav ul li a:hover{
+    color: #F99245 !important;
+
+}
+
+/* cambiar el color de fondo a la barra */
+nav.navbar {
+    background-color: #0038A8;
+}
+
+.nav_div a{
+    font-size: 50px;
+    padding-left: 10%;
+}
+
+.elements{
+padding-left: 10%;
 }
