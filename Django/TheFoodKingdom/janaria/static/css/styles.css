@@ -55,15 +55,11 @@
 
 .footer_div{
     padding: 1em;
-    margin-left: 200px;
 }
 
 .footer_title{
-    font-size: 35px;
+    font-size: 25px;
     color: #fff;
-    padding: 1em;
-    margin-top: 5px;
-    margin-left: -30px;
     text-decoration: none;
 }
 
@@ -100,7 +96,6 @@ nav.navbar {
 
 .nav_div a{
     font-size: 50px;
-    padding-left: 10%;
 }
 
 .elements{
