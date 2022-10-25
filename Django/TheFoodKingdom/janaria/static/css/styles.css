@@ -17,6 +17,7 @@
   justify-content: space-around;
   padding-top: 5em;
   margin-bottom: 3em;
+  gap: 12px;
 }
 
 .content_wrapper div {
@@ -140,19 +141,6 @@ padding-left: 10%;
   .dropdown a:hover {background-color: #F99245;}
   
   .show {display: block;}
-  
-  
-
-/* Register */
-.botoiUrdina{
-    background-color: #0038A8; 
-    color: white;
-}
-
-.ikonoa-input{
-    font-family:Gabriela, FontAwesome;
-}
-<<<<<<< HEAD
 
 .dropdown {
   position: relative;
@@ -198,5 +186,15 @@ padding-left: 10%;
     border-radius: 1em;
     margin-bottom: 10px;
 }
-=======
->>>>>>> 81c4f88855d76caf77d758737f87e5fb88a03592
+  
+  
+
+/* Register */
+.botoiUrdina{
+    background-color: #0038A8; 
+    color: white;
+}
+
+.ikonoa-input{
+    font-family:Gabriela, FontAwesome;
+}
