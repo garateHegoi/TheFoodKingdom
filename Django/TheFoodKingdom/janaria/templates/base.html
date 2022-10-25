@@ -56,34 +56,13 @@
                       <input class="input_form" type="text" id="fname" name="fname" placeholder="Korreo"><br>
                       <br>
                       <input class="input_form" type="text" id="lname" name="lname" placeholder="Pasahitza"><br><br>
-                      <input type="submit" value="Sartu">
+                      <button class="btn_log" type="submit">Sartu</button>
                 </form>
-            <a href="https://academy.hubspot.com/">Ez daukazu kontua</a>
-            <a href="https://www.youtube.com/user/hubspot">Sortu hemen</a>
-          </div>
-      </div>
-      <!--
-      <div class="dropdown">
-          <img class="user_icon" src="{% static 'img/usuario.png'%}">
-          <div class="dropdown-content">
-              <br>
-              <h2>Hasi saioa</h2>
-              <div>
-                  <form action="/action_page.php">
-                      <br>
-                      <input class="input_form" type="text" id="fname" name="fname" placeholder="Korreo"><br>
-                      <br>
-                      <input class="input_form" type="text" id="lname" name="lname" placeholder="Pasahitza"><br><br>
-                      <input type="submit" value="Sartu">
-                </form>
-
+                <a>Ez daukazu kontua</a>
+                <a href="{% url 'erregistroa' %}">Sortu hemen</a>
               </div>
-            <a href="https://academy.hubspot.com/">Ez daukazu kontua</a>
-            <a href="https://www.youtube.com/user/hubspot">Sortu hemen</a>
-        </div>
-
-      </div>
--->
+          </div>
+  </div>
   </div>
 </nav>
 {% endwith %}

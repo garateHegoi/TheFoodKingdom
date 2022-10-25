@@ -5,7 +5,7 @@
 .user_icon{
     max-width: 60px;
     color: #fff;
-    margin-right: 180px;
+    margin-right: 170px;
     padding-bottom:1em;
     padding-top: 1em;
 }
@@ -127,7 +127,9 @@ padding-left: 10%;
   box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
   z-index: 1;
   background-color: #F99245;
-  margin: 1em;
+  padding: 1em;
+  margin-top: 4%;
+  border-radius: 0px 0px 0px 20px;
 }
 
 .dropdown-content a {
@@ -141,3 +143,16 @@ padding-left: 10%;
 
 .show {display: block;}
 
+.input_form{
+    border: solid;
+    border-radius: 15px;
+    border-color: #fff;
+}
+
+.btn_log{
+    background-color: #0038A8;
+    color: #fff;
+    padding: 1% 6% 1% 6%;
+    border-radius: 1em;
+    margin-bottom: 10px;
+}
