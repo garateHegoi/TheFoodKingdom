@@ -2,7 +2,7 @@
 {% load static %} 
     {% block title %}The Food Kingdom | Kokapena{%endblock title%} 
     {% block content %}
-<div class="container d-flex justify-content-center">
+<div class="container mt-5 mb-5 d-flex align-items-center flex-column">
   <div class="mapouter">
     <div class="gmap_canvas">
       <iframe width="600" height="500" id="gmap_canvas" src="https://maps.google.com/maps?q=eibar%20unzaga&t=&z=17&ie=UTF8&iwloc=&output=embed" frameborder="0" scrolling="no" marginheight="0" marginwidth="0"></iframe><a href="https://fmovies-online.net">fmovies</a><br /><style>
@@ -21,17 +21,19 @@
       </style>
     </div>
   </div>
-</div>
 
-<div>
-  <p>Eibar</p>
-  <p>Gipuzkoa</p>
-</div>
-
-<div>
-  <p>Bidalketak herrian: 2€</p>
-  <p>Bidalketak probintzian: 3€</p>
-  <p>Bidalketak Euskadin: 4€</p>
+  <div class="d-flex justify-content-around mt-5 informazioa">
+    <div class="kokapena_div">
+      <p>Eibar</p>
+      <p>Gipuzkoa</p>
+    </div>
+  
+    <div class="kokapena_div">
+      <p>Bidalketak herrian: 2€</p>
+      <p>Bidalketak probintzian: 3€</p>
+      <p>Bidalketak Euskadin: 4€</p>
+    </div>
+  </div>
 </div>
   {% endblock content %}
   {% block javascript %}

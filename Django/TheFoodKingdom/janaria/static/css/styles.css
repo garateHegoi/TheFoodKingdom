@@ -15,7 +15,7 @@
   flex-wrap: wrap;
   align-items: center;
   justify-content: space-around;
-  gap: 12px;
+  gap: 15px;
 }
 .content_wrapper_margin{
   padding-top: 5em;
@@ -130,7 +130,7 @@ padding-left: 10%;
     box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
     z-index: 1;
     background-color: #F99245;
-    margin: 1em;
+    margin: 0em;
   }
   
   .dropdown-content a {
@@ -211,7 +211,7 @@ padding-left: 10%;
 .wrapper_grid{
   display: grid;
   grid-template-rows: 100px auto;
-  grid-template-columns: 25% 1fr;
+  grid-template-columns: 22% 1fr;
   grid-gap: 10px;
   margin-bottom: 50px;
 }
@@ -219,6 +219,9 @@ padding-left: 10%;
 .wrapper_aukerak{
   grid-column: 1 / 2;
   grid-row: 1 / 3;
+  background-color: #F99245;
+  padding: 10%;
+  border-radius: 0px 0px 30px 0px;
 }
 
 .wrapper_tituloa{
@@ -231,4 +234,24 @@ padding-left: 10%;
   grid-column: 2 / 3;
   grid-row: 2 / 3;
   margin: 0px 5em 0px 5em;
+}
+
+.background_urdina{
+  background-color: #0038A8 !important;
+  border: none;
+  padding: 0;
+  background: none;
+}
+
+/* Kokapena*/
+.kokapena_div{
+  border: 3px solid #F99245;
+  border-radius: 40px;
+  padding: 20px;
+  align-items: center;
+  height: fit-content;
+}
+
+.informazioa{
+  width: inherit;
 }
