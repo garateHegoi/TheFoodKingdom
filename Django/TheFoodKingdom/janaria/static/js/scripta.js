@@ -2,23 +2,17 @@
 toggle between hiding and showing the dropdown content */
 $(document).ready(function(){
   $("#user_login").on("click", function(){
-    $("#myDropdown").toggle();
+    $("#myDropdown").slideToggle();
   });
 
-  // Close the dropdown if the user clicks outside of it
-  window.onclick = function(event) {
-    if (!event.target.matches('.dropbtn')) {
-      var dropdowns = document.getElementsByClassName("dropdown-content");
-      var i;
-      for (i = 0; i < dropdowns.length; i++) {
-        var openDropdown = dropdowns[i];
-        if (openDropdown.classList.contains('show')) {
-          openDropdown.classList.remove('show');
-        }
-      }
+  /**$(document).on('click', function(event) {
+    if (!$(event.target).closest('#myDropdown').length) {
+      // Hide the menus.
+      $("#myDropdown").hide();
     }
-  }
+  });**/
 })
+
 
 
 
