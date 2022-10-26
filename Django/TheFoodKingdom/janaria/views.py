@@ -19,5 +19,8 @@ def kokapena(request):
 def erregistroa(request):
     return render(request, 'erregistroa.html')
 
+def profilaaldatu(request):
+    return render(request, 'profilaaldatu.html')
+
 def profila(request):
     return render(request, 'profila.html')

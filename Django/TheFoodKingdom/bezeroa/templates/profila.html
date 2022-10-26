@@ -1,55 +1,58 @@
 {% extends "base.html" %}
 {% load static %}
-    {% block title %}The Food Kingdom | Profila{% endblock title%}
-    {% block content %}
+{% block title %}The Food Kingdom | Erregistroa{% endblock title%}
+{% block content %}
 
-    <div class="container rounded bg-white mt-5 mb-5">
-      <div class="row">
-          <div class="col-md-3 border-right">
-              <div class="d-flex flex-column align-items-center text-center p-3 py-5"><img class="rounded-circle mt-5" width="150px" src="{% static 'img/usuario.png'%}"><span class="font-weight-bold">Pepetxu</span><span class="text-black-50">Pepetxu@gmail.com</span><span> </span></div>
-          </div>
-          <div class="col-md-5 border-right">
-              <div class="p-3 py-5">
-                  <div class="d-flex justify-content-between align-items-center mb-3">
-                      <h4 class="text-right">Erabiltzaile Profila</h4>
-                  </div>
-                  <div class="row mt-2">
-                      <div class="col-md-6"><label class="labels">Izena</label><input type="text" class="form-control" placeholder="Izena" value=""></div>
-                      <div class="col-md-6"><label class="labels">Abizena</label><input type="text" class="form-control" value="" placeholder="Abizena"></div>
-                  </div>
-                  <div class="row mt-3">
-                      <div class="col-md-12"><label class="labels">Usuarioa</label><input type="text" class="form-control" placeholder="Usuarioa" value=""></div>
-                      <div class="col-md-12"><label class="labels">Pasahitza</label><input type="text" class="form-control" placeholder="Pasahitza" value=""></div>
-                      <div class="col-md-12"><label class="labels">DNI</label><input type="text" class="form-control" placeholder="DNI" value=""></div>
-                      <div class="col-md-12"><label class="labels">Email</label><input type="text" class="form-control" placeholder="Email" value=""></div>
-                      <div class="col-md-12"><label class="labels">Education</label><input type="text" class="form-control" placeholder="education" value=""></div>
-                  </div>
-                  <div class="form-check">
-                    <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
-                    <label class="form-check-label" for="flexCheckDefault">
-                      Superuser bat da?
-                    </label>
-                  </div>
-                  <div class="form-check">
-                    <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
-                    <label class="form-check-label" for="flexCheckDefault">
-                      Staff da?
-                    </label>
-                  </div>
-                  <div class="form-check">
-                    <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
-                    <label class="form-check-label" for="flexCheckDefault">
-                      Actiboa da?
-                    </label>
-                  </div>
+<div class="container d-flex flex-column align-items-center my-5">
+    <div class="text-center border p-3" style="width: fit-content;">
+        <h1>Profila</h1>
+        <section class="vh-100" style="background-color: #ffffff;">
+            <div class="container py-5 h-100">
+                <div class="row d-flex justify-content-center align-items-center h-100">
+                    <div class="col">
+                        <div class="card" style="border-radius: 15px;">
+                            <div class="card-body p-8" >
+                                <div class="d-flex text-black" style="background-color:#F99245; border-radius: 10px;">
+                                    <div class="flex-shrink-0">
+                                        <img src="{% static 'img/usuario.png'%}"
+                                             class="img-fluid"
+                                             style="width: 180px; border-radius: 10px;">
+                                    </div>
+                                    <div class="flex-grow-1 ms-3">
+                                        <h5 class="mb-1">Pepetxu</h5>
+                                        <p class="mb-2 pb-1" style="color: #2b2a2a;">Bezero Premiun 🤓</p>
+                                        <div class="d-flex justify-content-start rounded-3 p-2 mb-2"
+                                             style="background-color: #efefef;">
+                                            <div>
+                                                <p class="small text-muted mb-1">Usuarioa</p>
+                                                <p class="mb-0">PepetxuMaster47</p>
+                                            </div>
+                                            <div class="px-3">
+                                                <p class="small text-muted mb-1">Email</p>
+                                                <p class="mb-0">pepetxu@gmail.com</p>
+                                            </div>
+                                            <div>
+                                                <p class="small text-muted mb-1">Nº de Pedidos</p>
+                                                <p class="mb-0">15</p>
+                                            </div>
+                                        </div>
+                                        <div class="d-flex pt-1">
+                                            <button type="button" class="btn btn-outline-primary me-1 flex-grow-1">
+                                                <a href="{% url 'profilaaldatu' %}">Perfila Editatu</a>
+                                            </button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+</div>
+</div>
 
-                  <div class="mt-5 text-center"><button class="btn btn-primary profile-button" type="button">Aldaketak Gorde</button></div>
-              </div>
-          </div>
-      </div>
-  </div>
-  </div>
-  </div>
-    {% endblock content %}
-    {% block javascript %}
-    {% endblock javascript %}
+{% endblock content %}
+{% block javascript %}
+{% endblock javascript %}
