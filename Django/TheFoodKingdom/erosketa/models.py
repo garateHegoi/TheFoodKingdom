@@ -24,4 +24,4 @@ class Erosketak(models.Model):
     bezero_dni = models.ForeignKey(Bezeroak, on_delete=models.CASCADE, null=True)
     saskia_id = models.ForeignKey(Saskiak, on_delete=models.CASCADE)
     def __str__(self):
-        return '%s' % self.id
+        return '%s' % self.eguna
