@@ -14,7 +14,7 @@ class Bidalketak(models.Model):
     helbidea = models.CharField(max_length=50)
     erosketa_id = models.ForeignKey(Erosketak, on_delete=models.CASCADE)
     def __str__(self):
-        return '%s' % self.id
+        return '%s' % self.helbidea
 
 
 class Txartelak(models.Model):

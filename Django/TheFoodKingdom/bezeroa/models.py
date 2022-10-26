@@ -4,7 +4,7 @@ from django.core.validators import MinValueValidator, MaxValueValidator
 # Create your models here.
 
 class Bezeroak(models.Model):
-   dni= models.CharField(primary_key=True, max_length=50)
+   dni= models.CharField(primary_key=True, max_length=9)
    telefono_zenbakia= models.IntegerField(validators=[
         MinValueValidator(9), MaxValueValidator(9)])
    posta_kodea = models.IntegerField(validators=[
@@ -13,11 +13,10 @@ class Bezeroak(models.Model):
    probintzia = models.CharField(max_length=50)
 
    def __str__(self):
-       return '%s' % self.izena
+       return '%s' % self.dni
 
 
 # Erabiltzailea
-
 class Erabiltzaileak(models.Model):
    id = models.AutoField(primary_key=True)
    password = models.CharField(max_length=50)
