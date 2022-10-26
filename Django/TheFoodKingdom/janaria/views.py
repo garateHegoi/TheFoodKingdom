@@ -18,3 +18,6 @@ def kokapena(request):
 
 def erregistroa(request):
     return render(request, 'erregistroa.html')
+
+def profila(request):
+    return render(request, 'profila.html')
