@@ -187,7 +187,13 @@ padding-left: 10%;
     margin-bottom: 10px;
 }
   
-  
+.btn_log{
+  background-color: #0038A8;
+  color: #fff;
+  padding: 2% 6% 2% 6%;
+  border-radius: 2em !important;
+  margin-bottom: 10px;
+}  
 
 /* Register */
 .botoiUrdina{
