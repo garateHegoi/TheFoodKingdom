@@ -2,8 +2,8 @@
 {% load static %}
     {% block title %}The Food Kingdom | Karta{% endblock title%}
     {% block content %}
-        <div>
-            <div id="accordion">
+        <div class="wrapper_grid">
+          <div id="accordion" class="wrapper_aukerak">
                 <div class="card">
                   <div class="card-header" id="headingHanburgesa">
                     <h5 class="mb-0">
@@ -53,37 +53,37 @@
                   </div>
                 </div>
               </div>
-        </div>
 
-        <div class="container w-50">
-            <h1 class="text-center">Salduenak</h1>
-            <div class="content_wrapper" >
-                <div class="text-center">
-                    <p>Enchilada</p>
-                    <img class="img_style" src="{% static 'img/enchilada.jpg'%}">
-                </div>
-                <div class="text-center">
-                    <p>Tamales</p>
-                    <img class="img_style" src="{% static 'img/enchilada.jpg'%}">
-                </div>
-                <div class="text-center">
-                    <p>York gazta</p>
-                    <img class="img_style" src="{% static 'img/enchilada.jpg'%}">
-                </div>
-                <div class="text-center">
-                    <p>Bacon Burger</p>
-                    <img class="img_style" src="{% static 'img/enchilada.jpg'%}">
-                </div>
-                <div class="text-center">
-                    <p>Mole</p>
-                    <img class="img_style" src="{% static 'img/enchilada.jpg'%}">
-                </div>
-                <div class="text-center">
-                    <p>Hanburgesa berezia</p>
-                    <img class="img_style" src="{% static 'img/enchilada.jpg'%}">
-                </div>
+              <div class="wrapper_tituloa">
+                <h1 class="text-center">Salduenak</h1>
+              </div>
+                <div class="content_wrapper wrapper_janaria" >
+                    <div class="text-center">
+                        <p>Enchilada</p>
+                        <img class="img_style" src="{% static 'img/enchilada.jpg'%}">
+                    </div>
+                    <div class="text-center">
+                        <p>Tamales</p>
+                        <img class="img_style" src="{% static 'img/enchilada.jpg'%}">
+                    </div>
+                    <div class="text-center">
+                        <p>York gazta</p>
+                        <img class="img_style" src="{% static 'img/enchilada.jpg'%}">
+                    </div>
+                    <div class="text-center">
+                        <p>Bacon Burger</p>
+                        <img class="img_style" src="{% static 'img/enchilada.jpg'%}">
+                    </div>
+                    <div class="text-center">
+                        <p>Mole</p>
+                        <img class="img_style" src="{% static 'img/enchilada.jpg'%}">
+                    </div>
+                    <div class="text-center">
+                        <p>Hanburgesa berezia</p>
+                        <img class="img_style" src="{% static 'img/enchilada.jpg'%}">
+                    </div>
             </div>
-        </div>
+            </div>
     {% endblock content %}
     {% block javascript %}
     {% endblock javascript %}
