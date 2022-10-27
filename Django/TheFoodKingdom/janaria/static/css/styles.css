@@ -176,15 +176,15 @@ padding-left: 10%;
 .show {display: block;}
 
 .input_form{
-    border: solid;
-    border-radius: 15px;
-    border-color: #fff;
+    border: solid !important;
+    border-radius: 30px !important;
+    border-color: #fff !important;
 }
 
 .btn_log{
     background-color: #0038A8;
     color: #fff;
-    padding: 1% 6% 1% 6%;
+    padding: 1% 6% 1% 6%!;
     border-radius: 1em;
     margin-bottom: 10px;
 }
@@ -192,7 +192,7 @@ padding-left: 10%;
 .btn_log{
   background-color: #0038A8;
   color: #fff;
-  padding: 2% 6% 2% 6%;
+  padding: 4% 7%!important;
   border-radius: 2em !important;
   margin-bottom: 10px;
 }  
@@ -233,7 +233,19 @@ padding-left: 10%;
 .wrapper_janaria{
   grid-column: 2 / 3;
   grid-row: 2 / 3;
-  margin: 0px 5em 0px 5em;
+  margin: 0px 7em;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-around;
+  padding-top: 20px;
+
+  border: 3px solid #F99245;
+  border-radius: 40px;
+}
+
+.wrapper_janaria div{
+  flex-basis: 30%;
 }
 
 .background_urdina{
@@ -242,6 +254,16 @@ padding-left: 10%;
   padding: 0;
   background: none;
 }
+
+.background_urdina h5 button{
+  font-size: 1.1em !important;
+}
+
+.collapsed_aukerak p a{
+  color: black;
+}
+
+
 
 /* Kokapena*/
 .kokapena_div{
@@ -254,4 +276,22 @@ padding-left: 10%;
 
 .informazioa{
   width: inherit;
+}
+
+/* Erregistroa */
+.erregistro_div{
+  width: fit-content; 
+  background-color: #F99245;
+  border-radius: 40px;
+  padding: 30px 70px;
+}
+
+/* Base */
+.lerro_espazioa{
+  line-height: 2px !important;
+}
+
+.link-estiloa{
+  text-decoration: underline !important;
+  color: black !important;
 }

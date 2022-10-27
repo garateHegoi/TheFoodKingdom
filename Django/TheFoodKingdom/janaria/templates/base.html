@@ -54,13 +54,16 @@
               <div>
                   <form action="/action_page.php">
                       <br>
-                      <input class="input_form" type="text" id="fname" name="fname" placeholder="Korreo"><br>
-                      <br>
-                      <input class="input_form" type="text" id="lname" name="lname" placeholder="Pasahitza"><br><br>
-                      <button class="btn btn_log" type="submit">Sartu</button>
+                      <div class="form-group">
+                        <input type="email" class="form-control input_form" id="inputKorreoa" placeholder="Korreoa">
+                      </div>
+                      <div class="form-group">
+                        <input type="password" class="form-control input_form" id="inputPasahitza" placeholder="Pasahitza">
+                      </div><br>
+                      <button class="btn btn_log" type="submit">SARTU</button>
                 </form>
-            <p class="mt-3">Ez daukazu kontua</p>
-            <a href="{% url 'erregistroa' %}">Sortu hemen</a>
+            <p class="mt-3 lerro_espazioa">Ez daukazu kontua</p>
+            <a class="lerro_espazioa link-estiloa" href="{% url 'erregistroa' %}">Sortu hemen</a>
           </div>
       </div>
   </div>
