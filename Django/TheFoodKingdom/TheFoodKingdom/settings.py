@@ -120,4 +120,8 @@ STATIC_URL = 'static/'
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
-DATE_INPUT_FORMATS = ['%m-%Y']
+USE_L10N = True
+DATE_FORMAT = 'm/y'
+DATE_INPUT_FORMATS = ('%n/%j/%Y')
+
+
