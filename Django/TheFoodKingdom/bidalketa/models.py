@@ -5,6 +5,7 @@ from bezeroa.models import Bezeroak
 from erosketa.models import Erosketak
 
 
+
 # Create your models here.
 
 class Bidalketak(models.Model):
@@ -20,8 +21,7 @@ class Bidalketak(models.Model):
 class Txartelak(models.Model):
     zenbakia = models.IntegerField(primary_key=True)
     iraungitze_data = models.DateField()
-    cvv = models.IntegerField(validators=[
-        MinValueValidator(3), MaxValueValidator(3)])
+    cvv = models.CharField(max_length=3)
     bezero_dni = models.ForeignKey(Bezeroak, on_delete=models.CASCADE)
     def __str__(self):
         return '%s' % self.zenbakia
