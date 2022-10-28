@@ -1,0 +1,40 @@
+{% extends "base.html" %}
+{% load static %}
+    {% block title %}The Food Kingdom | Saskia{% endblock title%}
+    {% block content %}
+
+    <div class="container d-flex flex-column align-items-center my-5">
+        <div class="text-center border saski_guztia">
+            <h1>Saskia</h1>
+            <div class="saski_bakoitza">
+                <div>
+                    <img src="{% static 'img/enchilada.jpg'%}">
+                </div>
+                <div>
+                    <p>Hanburgesa jugosa</p>
+                    <p>9€</p>
+                </div>
+                <div class="d-flex flex-row align-items-center justify-content-center">
+                    <i class="fa-solid fa-pen"></i>
+                    <i class="fa-solid fa-trash-can"></i>
+                </div>
+            </div>
+            <div class="saski_bakoitza">
+                <div>
+                    <img src="{% static 'img/enchilada.jpg'%}">
+                </div>
+                <div>
+                    <p>Hanburgesa jugosa</p>
+                    <p>9€</p>
+                </div>
+                <div class="d-flex flex-row align-items-center justify-content-center">
+                    <i class="fa-solid fa-pen"></i>
+                    <i class="fa-solid fa-trash-can"></i>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    {% endblock content %}
+    {% block javascript %}
+    {% endblock javascript %}

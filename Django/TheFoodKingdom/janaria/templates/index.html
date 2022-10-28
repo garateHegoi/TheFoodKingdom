@@ -4,11 +4,10 @@
     {% block content %}
     <div class="container text-center">
         
-      <a href="{% url 'profila' %}">Profila</a> <span> | </span> 
-      <a href="{% url 'saskia' %}">Saskia</a>  
+      <a href="{% url 'profila' %}">Profila</a>
       
-      <img class="rounded-circle mt-5"  src="{% static 'img/logo.png'%}">
-      <h1 class="mb-3">Si tienes hambre come a lo grande 🤓</h1>
+      <img id="arg" class="rounded-circle mt-5 eskutatuta"  src="{% static 'img/logo.png'%}">
+      <h1 id="text" class="mb-3 eskutatuta">Si tienes hambre come a lo grande 🤓</h1>
       <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
           <ol class="carousel-indicators">
             <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
@@ -52,7 +51,7 @@
                 <!--https://www.flickr.com/photos/maiarenata/6306364671/in/photolist-aBgLvn-zhEVS3-jk7nPK-SJrZ7u-YVWWcj-UiPXhG-FNonnH-DyAEEs-GjyzFW-2b8exEB-2fd24GS-2dQ3geR-eesLkf-jkafe1-Pay9Lv-rEeJxi-24jsPKA-VqjRJ9-PSZJbw-XUJdXt-AR7EbX-ZQcmfs-cRhHkE-M4858R-dNdAU7-2ebN3dw-WA6xka-E2cF2Q-2f76c1M-2dWYxK2-Pay8Sr-Q7d9vA-cf6Cmh-TEgWsz-aBjs1S-EGh8dt-26owdyA-veqX6c-RXmP6x-NyNWu3-ABLdpq-YYhQ39-Pn7tEs-XvYcrM-dN8bGp-JR2z7M-24eibZE-waEjfM-aBjqwE-2cVEvVM-->
                 <img class="img_style" src="{% static 'img/bocata.jpg'%}">
             </div>
-
+           
         </div>
     </div>
     {% endblock content %}
