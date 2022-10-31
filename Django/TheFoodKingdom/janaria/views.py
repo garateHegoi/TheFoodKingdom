@@ -6,7 +6,7 @@ def index(request):
     return render(request, 'index.html')
 
 def karta(request):
-    janariak = Janariak.objects.all()[:9]
+    janariak = Janariak.objects.all()
     return render(request, 'karta.html',{'janariak':janariak})
 
 def karta_sailkatua(request, submota):

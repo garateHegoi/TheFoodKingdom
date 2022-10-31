@@ -1,82 +1,77 @@
-{% extends "base.html" %}
-{% load static %}
-    {% block title %}The Food Kingdom | Karta{% endblock title%}
-    {% block content %}
-        <div class="wrapper_grid">
-          <div id="accordion" class="wrapper_aukerak">
-                <div class="card">
-                  <div class="card-header background_urdina" id="headingHanburgesa">
-                    <h5 class="mb-0">
-                      <button class="btn btn-link collapsed text-white button_text" data-toggle="collapse" data-target="#collapseHanburgesa" aria-expanded="true" aria-controls="collapseHanburgesa">
-                        Hanburgesak
-                      </button>
-                    </h5>
-                  </div>
-              
-                  <div id="collapseHanburgesa" class="collapse" aria-labelledby="headingHanburgesa" data-parent="#accordion">
-                    <div class="card-body collapsed_aukerak">
-                      <p><a href="#">Hanburgesa begetarianoak</a></p>
-                      <hr>
-                      <p><a href="#">Hanburgesa txikiak</a></p>
-                      <hr>
-                      <p><a href="#">Hanburgesa handiak</a></p>
-                    </div>
-                  </div>
-                </div>
-                <div class="card">
-                  <div class="card-header background_urdina" id="headingMexikanarra">
-                    <h5 class="mb-0">
-                      <button class="btn btn-link collapsed text-white button_text" data-toggle="collapse" data-target="#collapseMexikanarra" aria-expanded="false" aria-controls="collapseMexikanarra">
-                        Mexikanarra
-                      </button>
-                    </h5>
-                  </div>
-                  <div id="collapseMexikanarra" class="collapse" aria-labelledby="headingMexikanarra" data-parent="#accordion">
-                    <div class="card-body collapsed_aukerak">
-                        <p><a href="{% url 'karta_sailkatua' submota='Takoak' %}">Tacos / Takoak</a></p>
-                        <hr>
-                        <p><a href="{% url 'karta_sailkatua' submota='Entxiladak' %}">Enchiladas / Entxiladak</a></p>
-                        <hr>
-                        <p><a href="{% url 'karta_sailkatua' submota='Natxoak' %}">Nachos / Natxoak</a></p>
-                        <hr>
-                        <p><a href="{% url 'karta_sailkatua' submota='Tamalak' %}">Tamales / Tamalak</a></p>
-                        <hr>
-                        <p><a href="{% url 'karta_sailkatua' submota='Txilakilak' %}">Chilaquiles / Txilakilak</a></p>
-                    </div>
-                  </div>
-                </div>
-                <div class="card">
-                  <div class="card-header background_urdina" id="headingOgitartekoak">
-                    <h5 class="mb-0">
-                      <button class="btn btn-link collapsed text-white button_text" data-toggle="collapse" data-target="#collapseOgitartekoak" aria-expanded="false" aria-controls="collapseOgitartekoak">
-                        Ogitartekoak
-                      </button>
-                    </h5>
-                  </div>
-                  <div id="collapseOgitartekoak" class="collapse" aria-labelledby="headingOgitartekoak" data-parent="#accordion">
-                    <div class="card-body collapsed_aukerak">
-                        <p><a href="#">Ogitarteko erdia</a></p>
-                        <hr>
-                        <p><a href="#">Ogitarteko osoa</a></p>
-                    </div>
-                  </div>
-                </div>
-              </div>
+{% extends "base.html" %} 
+{% load static %} 
+{% block title %}The Food Kingdom | Karta{% endblock title%} 
+{% block content %}
+<div class="wrapper_grid">
+  <div class="wrapper_aukerak">
+    <div id="accordion">
+      <div class="card">
+        <div class="card-header background_urdina" id="headingHanburgesa">
+          <h5 class="mb-0">
+            <button class="btn btn-link collapsed text-white button_text" data-toggle="collapse" data-target="#collapseHanburgesa" aria-expanded="true" aria-controls="collapseHanburgesa">Hanburgesak</button>
+          </h5>
+        </div>
 
-              <div class="wrapper_tituloa">
-                <h1 class="text-center">SALDUENAK</h1>
-              </div>
-                <div class=" wrapper_janaria" >
-                  {% for janari in janariak %}
-                    <div class="text-center">
-                      <a href="{% url 'saskia' %}">
-                        <p>{{janari.izena}}</p>
-                        <img class="img_style" src="{% static 'img/enchilada.jpg'%}">
-                      </a>
-                    </div>
-                    {% endfor %}
-                </div>
-            </div>
-    {% endblock content %}
-    {% block javascript %}
-    {% endblock javascript %}
+        <div id="collapseHanburgesa" class="collapse" aria-labelledby="headingHanburgesa" data-parent="#accordion">
+          <div class="card-body collapsed_aukerak">
+            <p><a href="#">Hanburgesa begetarianoak</a></p>
+            <hr />
+            <p><a href="#">Hanburgesa txikiak</a></p>
+            <hr />
+            <p><a href="#">Hanburgesa handiak</a></p>
+          </div>
+        </div>
+      </div>
+      <div class="card">
+        <div class="card-header background_urdina" id="headingMexikanarra">
+          <h5 class="mb-0">
+            <button class="btn btn-link collapsed text-white button_text" data-toggle="collapse" data-target="#collapseMexikanarra" aria-expanded="false" aria-controls="collapseMexikanarra">Mexikanarra</button>
+          </h5>
+        </div>
+        <div id="collapseMexikanarra" class="collapse" aria-labelledby="headingMexikanarra" data-parent="#accordion">
+          <div class="card-body collapsed_aukerak">
+            <p><a href="{% url 'karta_sailkatua' submota='Takoak' %}">Tacos / Takoak</a></p>
+            <hr />
+            <p><a href="{% url 'karta_sailkatua' submota='Entxiladak' %}">Enchiladas / Entxiladak</a></p>
+            <hr />
+            <p><a href="{% url 'karta_sailkatua' submota='Natxoak' %}">Nachos / Natxoak</a> </p>
+            <hr />
+            <p><a href="{% url 'karta_sailkatua' submota='Tamalak' %}">Tamales / Tamalak</a></p>
+            <hr />
+            <p><a href="{% url 'karta_sailkatua' submota='Txilakilak' %}">Chilaquiles / Txilakilak</a></p>
+          </div>
+        </div>
+      </div>
+      <div class="card">
+        <div class="card-header background_urdina" id="headingOgitartekoak">
+          <h5 class="mb-0">
+            <button
+              class="btn btn-link collapsed text-white button_text" data-toggle="collapse" data-target="#collapseOgitartekoak" aria-expanded="false" aria-controls="collapseOgitartekoak"> Ogitartekoak</button>
+          </h5>
+        </div>
+        <div id="collapseOgitartekoak" class="collapse" aria-labelledby="headingOgitartekoak" data-parent="#accordion">
+          <div class="card-body collapsed_aukerak">
+            <p><a href="#">Ogitarteko erdia</a></p>
+            <hr />
+            <p><a href="#">Ogitarteko osoa</a></p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="wrapper_tituloa">
+    <h1 class="text-center">KARTA</h1>
+  </div>
+  <div class="wrapper_janaria">
+    {% for janari in janariak %}
+    <div class="text-center">
+      <a href="{% url 'saskia' %}">
+        <img src="{% static 'img/enchilada.jpg'%}" />
+        <p>{{janari.izena}}</p>
+      </a>
+    </div>
+    {% endfor %}
+  </div>
+</div>
+{% endblock content %} {% block javascript %} {% endblock javascript %}
