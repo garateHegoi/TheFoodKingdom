@@ -3,7 +3,7 @@
 {% block title %}The Food Kingdom | Karta{% endblock title%} 
 {% block content %}
 <div class="wrapper_grid">
-  <div class="wrapper_aukerak">
+  <aside class="wrapper_aukerak">
     <h6 class="mb-5 text-light"><i>Sailkatu zure gustoko janariaren arabera</i></h6>
     <div id="accordion">
       <div class="card">
@@ -59,12 +59,12 @@
         </div>
       </div>
     </div>
-  </div>
+  </aside>
 
   <div class="wrapper_tituloa">
     <h1 class="text-center">KARTA</h1>
   </div>
-  <div class="wrapper_janaria">
+  <section class="wrapper_janaria">
     {% for janari in janariak %}
     <div class="text-center">
       <a href="{% url 'saskia' %}">
@@ -73,6 +73,8 @@
       </a>
     </div>
     {% endfor %}
-  </div>
+  </section>
 </div>
-{% endblock content %} {% block javascript %} {% endblock javascript %}
+{% endblock content %} 
+{% block javascript %} 
+{% endblock javascript %}

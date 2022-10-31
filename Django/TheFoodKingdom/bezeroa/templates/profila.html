@@ -4,20 +4,20 @@
 {% block content %}
 
 <div class="container text-center my-3">
-        <div class="d-flex justify-content-center align-items-center">
+    <section class="d-flex justify-content-center align-items-center">
         <div class="mr-3">
             <img src="{% static 'img/usuario.png'%}"class="img-fluid rounded-circle p-2 mb-3" style="width:120px; border-radius: 10px; background-color: black;">
             <h5>Pepetxu</h5>
             <h5>pepetxu@gmail.com</h5>
         </div>
         <a href="{% url 'profilaaldatu' %}"><i class="fa-solid fa-pen text-dark"></i></a>
-    </div>
+    </section>
 </div>
 
-<div class="eskariak_title">
+<section class="eskariak_title">
     <h5>ESKARIAK</h5>
-</div>
-<div class="eskariak">
+</section>
+<section class="eskariak">
     <div>
         <div class="eskari_info">
             <p>Eskaria #5345A</p>
@@ -36,7 +36,7 @@
             </div>
         </div>
     </div>
-</div>
+</section>
 {% endblock content %}
 {% block javascript %}
 {% endblock javascript %}

@@ -3,12 +3,16 @@
     {% block title %}The Food Kingdom{% endblock title%}
     {% block content %}
     <div class="container text-center">
-        
-      <a href="{% url 'profila' %}">Profila</a>
       
-      <img id="arg" class="rounded-circle mt-5 eskutatuta"  src="{% static 'img/logo.png'%}">
-      <h1 id="text" class="mb-5 eskutatuta">Si tienes hambre come a lo grande 🤓</h1>
-      <div id="carouselExampleIndicators" class="carousel slide box_shadow_carrousel" data-ride="carousel">
+      <section>
+        <a href="{% url 'profila' %}">Profila</a>
+      
+        <img id="arg" class="rounded-circle mt-5 eskutatuta"  src="{% static 'img/logo.png'%}">
+        <h1 id="text" class="mb-5 eskutatuta">Si tienes hambre come a lo grande 🤓</h1>
+      </section>
+      
+      <section>
+        <div id="carouselExampleIndicators" class="carousel slide box_shadow_carrousel" data-ride="carousel">
           <ol class="carousel-indicators">
             <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
             <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
@@ -33,26 +37,26 @@
             <span class="carousel-control-next-icon" aria-hidden="true"></span>
             <span class="sr-only">Next</span>
           </a>
-      </div>
-
-        <div class="content_wrapper content_wrapper_margin">
-            <div>
-                <p>Janari Mexikarra</p>
-                <!--https://www.flickr.com/photos/cogdog/51809785300/in/photolist-2hTKd9c-2m1gQyA-2mWfG9m-eabso-2mWbUWj-LHyTxA-2mcgZpd-x7fZ9P-wNX9x3-oeD9Ue-x6FWqx-x795Uk-otVwo6-w9PqsP-ovcg7x-2mzVsHg-6BiA7m-2mzLyCT-8kD6Kg-U98E3Y-xcfipX-ouDicT-otQA29-ouByqE-9kJk-x64LMJ-x5MjuL-ovEqhq-6DbGjX-otVYsG-i362yM-->
-                <img class="img_style" src="{% static 'img/enchilada.jpg'%}">
-            </div>
-             <div>
-                <p>Hanburgesak</p>
-                <!--https://www.flickr.com/photos/125178378@N02/15017552912/in/photolist-oT3Th5-DN9mkz-GFftiP-EHdhfC-54j3zu-CByBNm-Ef7vNX-qoW4nF-eak9Br-AEeoQP-jSHhZ-2g4hXY6-2i5q3Fs-2i5ss8w-2i5q3RN-2bZLU1k-N8Ttni-uJZ7Nw-2m96zbj-258End2-CjE7RN-72jLpc-2kge2ms-2j3FTQZ-2kRSghh-2kgdA1G-2mWQfYP-2kgdAzH-2kg9VDe-2kgdCtN-2kg9Vgv-2kgdB4o-2kg9VqD-2kgdFif-2kge6YZ-2nAkvxP-2mB9jMs-yFEXX9-6tPFu1-2kge4gu-Aj3AYX-GEKJ3s-2eJrJxC-2mWNkZo-2kgdAMS-2nSpoBP-2nSjmbR-Amwcm2-pnjW1k-2nSjhQn-->
-                <img class="img_style" src="{% static 'img/hamburgesa_berezia.jpg'%}">
-            </div>
-            <div>
-                <p>Ogitartekoak</p>
-                <!--https://www.flickr.com/photos/maiarenata/6306364671/in/photolist-aBgLvn-zhEVS3-jk7nPK-SJrZ7u-YVWWcj-UiPXhG-FNonnH-DyAEEs-GjyzFW-2b8exEB-2fd24GS-2dQ3geR-eesLkf-jkafe1-Pay9Lv-rEeJxi-24jsPKA-VqjRJ9-PSZJbw-XUJdXt-AR7EbX-ZQcmfs-cRhHkE-M4858R-dNdAU7-2ebN3dw-WA6xka-E2cF2Q-2f76c1M-2dWYxK2-Pay8Sr-Q7d9vA-cf6Cmh-TEgWsz-aBjs1S-EGh8dt-26owdyA-veqX6c-RXmP6x-NyNWu3-ABLdpq-YYhQ39-Pn7tEs-XvYcrM-dN8bGp-JR2z7M-24eibZE-waEjfM-aBjqwE-2cVEvVM-->
-                <img class="img_style" src="{% static 'img/bocata.jpg'%}">
-            </div>
-           
         </div>
+      </section>
+      
+      <section class="content_wrapper content_wrapper_margin">
+        <div>
+            <p>Janari Mexikarra</p>
+            <!--https://www.flickr.com/photos/cogdog/51809785300/in/photolist-2hTKd9c-2m1gQyA-2mWfG9m-eabso-2mWbUWj-LHyTxA-2mcgZpd-x7fZ9P-wNX9x3-oeD9Ue-x6FWqx-x795Uk-otVwo6-w9PqsP-ovcg7x-2mzVsHg-6BiA7m-2mzLyCT-8kD6Kg-U98E3Y-xcfipX-ouDicT-otQA29-ouByqE-9kJk-x64LMJ-x5MjuL-ovEqhq-6DbGjX-otVYsG-i362yM-->
+            <img class="img_style" src="{% static 'img/enchilada.jpg'%}">
+        </div>
+        <div>
+          <p>Hanburgesak</p>
+          <!--https://www.flickr.com/photos/125178378@N02/15017552912/in/photolist-oT3Th5-DN9mkz-GFftiP-EHdhfC-54j3zu-CByBNm-Ef7vNX-qoW4nF-eak9Br-AEeoQP-jSHhZ-2g4hXY6-2i5q3Fs-2i5ss8w-2i5q3RN-2bZLU1k-N8Ttni-uJZ7Nw-2m96zbj-258End2-CjE7RN-72jLpc-2kge2ms-2j3FTQZ-2kRSghh-2kgdA1G-2mWQfYP-2kgdAzH-2kg9VDe-2kgdCtN-2kg9Vgv-2kgdB4o-2kg9VqD-2kgdFif-2kge6YZ-2nAkvxP-2mB9jMs-yFEXX9-6tPFu1-2kge4gu-Aj3AYX-GEKJ3s-2eJrJxC-2mWNkZo-2kgdAMS-2nSpoBP-2nSjmbR-Amwcm2-pnjW1k-2nSjhQn-->
+          <img class="img_style" src="{% static 'img/hamburgesa_berezia.jpg'%}">
+        </div>
+        <div>
+          <p>Ogitartekoak</p>
+          <!--https://www.flickr.com/photos/maiarenata/6306364671/in/photolist-aBgLvn-zhEVS3-jk7nPK-SJrZ7u-YVWWcj-UiPXhG-FNonnH-DyAEEs-GjyzFW-2b8exEB-2fd24GS-2dQ3geR-eesLkf-jkafe1-Pay9Lv-rEeJxi-24jsPKA-VqjRJ9-PSZJbw-XUJdXt-AR7EbX-ZQcmfs-cRhHkE-M4858R-dNdAU7-2ebN3dw-WA6xka-E2cF2Q-2f76c1M-2dWYxK2-Pay8Sr-Q7d9vA-cf6Cmh-TEgWsz-aBjs1S-EGh8dt-26owdyA-veqX6c-RXmP6x-NyNWu3-ABLdpq-YYhQ39-Pn7tEs-XvYcrM-dN8bGp-JR2z7M-24eibZE-waEjfM-aBjqwE-2cVEvVM-->
+          <img class="img_style" src="{% static 'img/bocata.jpg'%}">
+        </div>
+      </section>
     </div>
     {% endblock content %}
     {% block javascript %}
