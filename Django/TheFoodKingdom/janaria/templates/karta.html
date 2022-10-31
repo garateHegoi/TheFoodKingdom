@@ -33,13 +33,15 @@
                   </div>
                   <div id="collapseMexikanarra" class="collapse" aria-labelledby="headingMexikanarra" data-parent="#accordion">
                     <div class="card-body collapsed_aukerak">
-                        <p><a href="#">Takoak</a></p>
+                        <p><a href="{% url 'karta_sailkatua' submota='Takoak' %}">Tacos / Takoak</a></p>
                         <hr>
-                        <p><a href="#">Enchiladak</a></p>
+                        <p><a href="{% url 'karta_sailkatua' submota='Entxiladak' %}">Enchiladas / Entxiladak</a></p>
                         <hr>
-                        <p><a href="#">Natxoak</a></p>
+                        <p><a href="{% url 'karta_sailkatua' submota='Natxoak' %}">Nachos / Natxoak</a></p>
                         <hr>
-                        <p><a href="#">Txilakilak</a></p>
+                        <p><a href="{% url 'karta_sailkatua' submota='Tamalak' %}">Tamales / Tamalak</a></p>
+                        <hr>
+                        <p><a href="{% url 'karta_sailkatua' submota='Txilakilak' %}">Chilaquiles / Txilakilak</a></p>
                     </div>
                   </div>
                 </div>
@@ -65,43 +67,15 @@
                 <h1 class="text-center">SALDUENAK</h1>
               </div>
                 <div class=" wrapper_janaria" >
+                  {% for janari in janariak %}
                     <div class="text-center">
                       <a href="{% url 'saskia' %}">
-                        <p>Enchilada</p>
+                        <p>{{janari.izena}}</p>
                         <img class="img_style" src="{% static 'img/enchilada.jpg'%}">
                       </a>
                     </div>
-                    <div class="text-center">
-                      <a href="{% url 'saskia' %}">
-                        <p>Tamales</p>
-                        <img class="img_style" src="{% static 'img/enchilada.jpg'%}">
-                      </a>
-                    </div>
-                    <div class="text-center">
-                      <a href="{% url 'saskia' %}">
-                        <p>York gazta</p>
-                        <img class="img_style" src="{% static 'img/enchilada.jpg'%}">
-                      </a>
-                    </div>
-                    <div class="text-center">
-                      <a href="{% url 'saskia' %}">
-                        <p>Bacon Burger</p>
-                        <img class="img_style" src="{% static 'img/enchilada.jpg'%}">
-                      </a>
-                    </div>
-                    <div class="text-center">
-                      <a href="{% url 'saskia' %}">
-                        <p>Mole</p>
-                        <img class="img_style" src="{% static 'img/enchilada.jpg'%}">
-                      </a>
-                    </div>
-                    <div class="text-center">
-                      <a href="{% url 'saskia' %}">
-                        <p>Hanburgesa berezia</p>
-                        <img class="img_style" src="{% static 'img/enchilada.jpg'%}">
-                      </a>
-                    </div>
-            </div>
+                    {% endfor %}
+                </div>
             </div>
     {% endblock content %}
     {% block javascript %}
