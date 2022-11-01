@@ -24,3 +24,7 @@ def profila(request):
 
 def saskia(request):
     return render(request, 'saskia.html')
+
+def produktua(request, id):
+    produktua=Janariak.objects.get(id=id)
+    return render(request, 'produktua.html',{'produktua':produktua})
