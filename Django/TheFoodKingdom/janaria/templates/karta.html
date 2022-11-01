@@ -15,11 +15,11 @@
 
         <div id="collapseHanburgesa" class="collapse" aria-labelledby="headingHanburgesa" data-parent="#accordion">
           <div class="card-body collapsed_aukerak">
-            <p><a href="#">Hanburgesa begetarianoak</a></p>
+            <p><a href="{% url 'karta_sailkatua' submota='Hanburgesa begetarianoak' %}">Hanburgesa begetarianoak</a></p>
             <hr />
-            <p><a href="#">Hanburgesa txikiak</a></p>
+            <p><a href="{% url 'karta_sailkatua' submota='Gourmet hanburgesak' %}">Gourmet hanburgesak</a></p>
             <hr />
-            <p><a href="#">Hanburgesa handiak</a></p>
+            <p><a href="{% url 'karta_sailkatua' submota='Hanburgesa potenteak' %}">Hanburgesa potenteak</a></p>
           </div>
         </div>
       </div>
@@ -52,9 +52,9 @@
         </div>
         <div id="collapseOgitartekoak" class="collapse" aria-labelledby="headingOgitartekoak" data-parent="#accordion">
           <div class="card-body collapsed_aukerak">
-            <p><a href="#">Ogitarteko erdia</a></p>
+            <p><a href="{% url 'karta_sailkatua' submota='Ogitarteko klasikoak' %}">Ogitarteko klasikoak</a></p>
             <hr />
-            <p><a href="#">Ogitarteko osoa</a></p>
+            <p><a href="{% url 'karta_sailkatua' submota='Gourmet ogitartekoak' %}">Gourmet ogitartekoak</a></p>
           </div>
         </div>
       </div>
