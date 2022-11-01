@@ -323,8 +323,14 @@ nav.navbar {
   flex-direction: column;
   align-items: center;
 }
-.erregistro_div div {
+.erregistro_div form {
   width: 90%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.erregistro_div form div {
+  width:100%
 }
 
 .botoiUrdina {
@@ -434,4 +440,27 @@ nav.navbar {
   line-height: 1;
   margin: 0;
   width: fit-content;
+}
+
+/* Profila aldatu */
+.profila_aldatu_div{
+  width: 50%;
+  background-color: #f99245;
+  border-radius: 40px;
+  padding: 30px 70px;
+  box-shadow: 15px 15px black;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.profila_aldatu_div form {
+  width: 90%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.profila_aldatu_div form div {
+  width:100%
 }
