@@ -233,7 +233,7 @@ padding-left: 10%;
 .wrapper_janaria{
   grid-column: 2 / 3;
   grid-row: 2 / 3;
-  margin: 0px 7em;
+  margin: 0px 10%;
   display: flex;
   flex-wrap: wrap;
   align-items: center;
@@ -294,4 +294,48 @@ padding-left: 10%;
 .link-estiloa{
   text-decoration: underline !important;
   color: black !important;
+}
+
+/* Saskia */
+.saski_bakoitza{
+  background-color: white;
+  border-radius: 40px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding: 20px 40px;
+  width: inherit;
+  margin-bottom: 15px;
+  
+}
+.saski_bakoitza div p{
+ margin: 0; 
+}
+
+.saski_bakoitza div img{
+  width: 40%;
+  border-radius: 40px;
+}
+
+.saski_bakoitza div{
+  width: 30%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.saski_guztia{
+  width: 90%; 
+  background-color: #F99245;
+  border-radius: 40px;
+  padding: 30px 30px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Index */
+.eskutatuta{
+  display: none;
 }
