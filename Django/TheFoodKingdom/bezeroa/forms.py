@@ -1,9 +1,8 @@
 from django import forms
 
-from .models import Erabiltzaileak
+from .models import User
 
-class ErregistroaForm(forms.ModelForm):
-
+class LoginForm(forms.ModelForm):
     class Meta:
-        model = Erabiltzaileak
-        fields = ('username', 'email','first_name','last_name','password')
+        model = User
+        fields = ('username', 'password')
