@@ -6,7 +6,7 @@ from django.db import models
 class Janariak(models.Model):
     id = models.AutoField(primary_key=True)
     izena = models.CharField(max_length=50)
-    osagaiak = models.CharField(max_length=100)
+    osagaiak = models.CharField(max_length=100, blank=True)
     prezioa = models.CharField(max_length=5)
     mota = models.CharField(max_length=50)
     submota=models.CharField(max_length=50, null=True)
