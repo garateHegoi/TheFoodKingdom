@@ -1,3 +1,35 @@
+AJAX_KARTA.JS
+$(document).ready(function () {
+  $("a#sailkatu").on("click", function () {
+    let submota =this.value;
+    $(
+      $.ajax({
+        type: 'GET',
+        url: "{% url 'karta_sailkatua' submota='submota' %}",
+        success: function (response) {
+            for(let i=0; i<response.length;i++){
+                $('#janariak').append($('<div id="janaria" class="text-center">'));
+                janari_id=response[i].id;
+                $('#janaria').append($(`<a id="link" href="{% url 'produktua' id=janari_id %}">`));
+                $('#link').append($(`<img src="{% static 'img/enchilada.jpg'%}">`));
+                $('#link').append($(`<p id="janari_izena">`).html(response[i].izena));
+            }
+        },
+        error: function (response) {
+            alert("Errore bat egon da kargatzerakoan")
+        },
+      })
+    );
+  });
+});
+
+
+VIEWS.PY
+def karta_sailkatua(request, submota):
+    janariak = list(Janariak.objects.filter(submota=submota).values())
+    return JsonResponse(janariak,safe=False)
+
+KARTA.HTML
 {% extends "base.html" %} 
 {% load static %} 
 {% block title %}The Food Kingdom | Karta{% endblock title%} 
@@ -15,11 +47,11 @@
 
         <div id="collapseHanburgesa" class="collapse" aria-labelledby="headingHanburgesa" data-parent="#accordion">
           <div class="card-body collapsed_aukerak">
-            <p><a href="{% url 'karta_sailkatua' submota='Hanburgesa begetarianoak' %}">Hanburgesa begetarianoak</a></p>
+            <p><a id="sailkatu" href="{% url 'karta_sailkatua' submota='Hanburgesa begetarianoak' %}">Hanburgesa begetarianoak</a></p>
             <hr />
-            <p><a href="{% url 'karta_sailkatua' submota='Gourmet hanburgesak' %}">Gourmet hanburgesak</a></p>
+            <p><a id="sailkatu" href="{% url 'karta_sailkatua' submota='Gourmet hanburgesak' %}">Gourmet hanburgesak</a></p>
             <hr />
-            <p><a href="{% url 'karta_sailkatua' submota='Hanburgesa potenteak' %}">Hanburgesa potenteak</a></p>
+            <p><a id="sailkatu" href="{% url 'karta_sailkatua' submota='Hanburgesa potenteak' %}">Hanburgesa potenteak</a></p>
           </div>
         </div>
       </div>
@@ -31,15 +63,15 @@
         </div>
         <div id="collapseMexikanarra" class="collapse" aria-labelledby="headingMexikanarra" data-parent="#accordion">
           <div class="card-body collapsed_aukerak">
-            <p><a href="{% url 'karta_sailkatua' submota='Takoak' %}">Tacos / Takoak</a></p>
+            <p><a id="sailkatu" href="{% url 'karta_sailkatua' submota='Takoak' %}">Tacos / Takoak</a></p>
             <hr />
-            <p><a href="{% url 'karta_sailkatua' submota='Entxiladak' %}">Enchiladas / Entxiladak</a></p>
+            <p><a id="sailkatu" href="{% url 'karta_sailkatua' submota='Entxiladak' %}">Enchiladas / Entxiladak</a></p>
             <hr />
-            <p><a href="{% url 'karta_sailkatua' submota='Natxoak' %}">Nachos / Natxoak</a> </p>
+            <p><a id="sailkatu" href="{% url 'karta_sailkatua' submota='Natxoak' %}">Nachos / Natxoak</a> </p>
             <hr />
-            <p><a href="{% url 'karta_sailkatua' submota='Tamalak' %}">Tamales / Tamalak</a></p>
+            <p><a id="sailkatu" href="{% url 'karta_sailkatua' submota='Tamalak' %}">Tamales / Tamalak</a></p>
             <hr />
-            <p><a href="{% url 'karta_sailkatua' submota='Txilakilak' %}">Chilaquiles / Txilakilak</a></p>
+            <p><a id="sailkatu" href="{% url 'karta_sailkatua' submota='Txilakilak' %}">Chilaquiles / Txilakilak</a></p>
           </div>
         </div>
       </div>
@@ -52,9 +84,9 @@
         </div>
         <div id="collapseOgitartekoak" class="collapse" aria-labelledby="headingOgitartekoak" data-parent="#accordion">
           <div class="card-body collapsed_aukerak">
-            <p><a href="{% url 'karta_sailkatua' submota='Ogitarteko klasikoak' %}">Ogitarteko klasikoak</a></p>
+            <p><a id="sailkatu" href="{% url 'karta_sailkatua' submota='Ogitarteko klasikoak' %}">Ogitarteko klasikoak</a></p>
             <hr />
-            <p><a href="{% url 'karta_sailkatua' submota='Gourmet ogitartekoak' %}">Gourmet ogitartekoak</a></p>
+            <p><a id="sailkatu" href="{% url 'karta_sailkatua' submota='Gourmet ogitartekoak' %}">Gourmet ogitartekoak</a></p>
           </div>
         </div>
       </div>
@@ -67,11 +99,11 @@
         </div>
         <div id="collapseEdariak" class="collapse" aria-labelledby="headingOgitartekoak" data-parent="#accordion">
           <div class="card-body collapsed_aukerak">
-            <p><a href="{% url 'karta_sailkatua' submota='Freskagarriak' %}">Freskagarriak</a></p>
+            <p><a id="sailkatu" href="{% url 'karta_sailkatua' submota='Freskagarriak' %}">Freskagarriak</a></p>
             <hr />
-            <p><a href="{% url 'karta_sailkatua' submota='Ura' %}">Ura</a></p>
+            <p><a id="sailkatu" href="{% url 'karta_sailkatua' submota='Ura' %}">Ura</a></p>
             <hr />
-            <p><a href="{% url 'karta_sailkatua' submota='Alkoholdun edariak' %}">Garagardo eta ardoak</a></p>
+            <p><a id="sailkatu" href="{% url 'karta_sailkatua' submota='Alkoholdun edariak' %}">Alkoholdun edariak</a></p>
           </div>
         </div>
       </div>
@@ -81,12 +113,12 @@
   <div class="wrapper_tituloa">
     <h1 class="text-center">KARTA</h1>
   </div>
-  <section class="wrapper_janaria">
+  <section id="janariak" class="wrapper_janaria">
     {% for janari in janariak %}
-    <div class="text-center">
-      <a href="{% url 'produktua' id=janari.id %}">
-        <img class="janarien_argazkia" src={{janari.argazki_url}} />
-        <p>{{janari.izena}}</p>
+    <div id="janaria" class="text-center">
+      <a id="link" href="{% url 'produktua' id=janari.id %}">
+        <img src="{% static 'img/enchilada.jpg'%}" />
+        <p id="janari_izena">{{janari.izena}}</p>
       </a>
     </div>
     {% endfor %}
@@ -94,4 +126,5 @@
 </div>
 {% endblock content %} 
 {% block javascript %} 
+<script src="{% static 'js/ajax_karta.js' %}"></script>
 {% endblock javascript %}
