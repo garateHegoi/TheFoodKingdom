@@ -4,6 +4,8 @@ from . import views
 urlpatterns=[
     path('',views.index,name='index'),
     path('karta/',views.karta,name='karta'),
+    path('login/',views.login,name='login'),
+    path('logout/',views.logout,name='logout'),
     path('karta_sailkatua/<str:submota>',views.karta_sailkatua,name='karta_sailkatua'),
     path('kokapena/',views.kokapena,name='kokapena'),
     path('erregistroa/',views.erregistroa,name='erregistroa'),

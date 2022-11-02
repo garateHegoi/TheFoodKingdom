@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+{% load static %}
+{% block title %}The Food Kingdom | Login{% endblock title%}
+{% block content %}
+
+<div></div>
+    <form method="post" action="{% url 'login' %}">
+        {% csrf_token %}
+        {{form}}
+        <button class="btn btn_log" type="submit">SARTU</button>
+    </form>
+</div>
+
+{% endblock content %}
+{% block javascript %}
+{% endblock javascript %}
