@@ -8,11 +8,17 @@
     <div class="info">
       <h4>{{produktua.izena}}</h4>
       <img src="{% static 'img/enchilada.jpg'%}" />
-      <ul>
-        <li>{{produktua.osagaiak}}</li>
-        <li>Alergenoak? {{produktua.alergenoak}}</li>
-        <li>{{produktua.prezioa}} €</li>
-      </ul>
+      {% if produktua.mota == "Edariak" %}
+        <ul>
+          <li>Prezioa: {{produktua.prezioa}} €</li>
+        </ul>
+      {% else %}
+        <ul>
+          <li>{{produktua.osagaiak}}</li>
+          <li>Alergenoak? {{produktua.alergenoak}}</li>
+          <li>Prezioa: {{produktua.prezioa}} €</li>
+        </ul>
+      {% endif %}
     </div>
     <div class="katitatea">
       <h5>Prezioa</h5>
