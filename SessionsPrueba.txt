@@ -16,6 +16,8 @@ def logout(request):
 
 
 
+https://github.com/duplxey/django-spa-cookie-auth/blob/master/django_react_templates/api/views.py
+
 
 
 https://www.tutorialspoint.com/django/django_sessions.htm

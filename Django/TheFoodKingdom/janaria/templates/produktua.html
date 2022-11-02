@@ -7,7 +7,7 @@
   <section class="produktua_div">
     <div class="info">
       <h4>{{produktua.izena}}</h4>
-      <img src="{% static 'img/enchilada.jpg'%}" />
+      <img src={{produktua.argazki_url}} />
       {% if produktua.mota == "Edariak" %}
         <ul>
           <li>Prezioa: {{produktua.prezioa}} €</li>

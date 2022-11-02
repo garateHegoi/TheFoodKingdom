@@ -85,7 +85,7 @@
     {% for janari in janariak %}
     <div class="text-center">
       <a href="{% url 'produktua' id=janari.id %}">
-        <img src="{% static 'img/enchilada.jpg'%}" />
+        <img class="janarien_argazkia" src={{janari.argazki_url}} />
         <p>{{janari.izena}}</p>
       </a>
     </div>
