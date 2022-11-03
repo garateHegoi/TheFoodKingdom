@@ -26,7 +26,7 @@ def login(request):
             else:
                 messages.info(request, 'Username OR password is incorrect')
 
-        return render(request, 'login.html',{'form':form, 'user':request.user})
+        return render(request, 'login.html',{'form':form})
 
 def logout(request):
     auth_logout(request)

@@ -5,7 +5,9 @@
     <div class="container text-center">
       
       <section>
+        {% if user.is_authenticated %} 
         <a href="{% url 'profila' %}">Profila</a>
+        {% endif %}
       
         <img id="arg" class="rounded-circle mt-5 eskutatuta"  src="{% static 'img/logo.png'%}">
         <h1 id="text" class="mb-5 eskutatuta">Si tienes hambre come a lo grande 🤓</h1>
