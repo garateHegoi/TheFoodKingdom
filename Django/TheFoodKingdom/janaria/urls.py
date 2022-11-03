@@ -9,7 +9,7 @@ urlpatterns=[
     path('karta_sailkatua/<str:submota>',views.karta_sailkatua,name='karta_sailkatua'),
     path('kokapena/',views.kokapena,name='kokapena'),
     path('erregistroa/',views.erregistroa,name='erregistroa'),
-    path('profila/',views.profila,name='profila'),
+    path('profila<int:id>/',views.profila,name='profila'),
     path('saskia/',views.saskia,name='saskia'),
     path('produktua/<int:id>',views.produktua,name='produktua'),
     ]
