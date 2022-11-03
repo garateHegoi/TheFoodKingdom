@@ -22,19 +22,47 @@
     </div>
     <div class="katitatea">
       <h5>Prezioa</h5>
-      <input type="text" value="{{produktua.prezioa}} €" disabled />
+      <input id="prez" type="text" value="{{produktua.prezioa}}" disabled />
 
       <div>
-        <a href="#"><i class="fa-solid fa-circle-minus icon"></i></a>
-        <p>x 1</p>
-        <a href="#"><i class="fa-solid fa-circle-plus icon"></i></a>
+        <a onclick="kendu()"><i class="fa-solid fa-circle-minus icon"></i></a>
+       <p id="kopurua">1</p>
+        <a onclick="gehitu()"><i class="fa-solid fa-circle-plus icon"></i></a>
       </div>
 
       <button>GEHITU</button>
     </div>
   </section>
 </div>
+<script>
+  function gehitu() {
+    <!--Kopurua -->
+    kopz = parseInt($("#kopurua").html())
 
+    <!--Prezio totala -->
+    prezio = parseFloat($("#prez").val())
+
+    kopb = kopz + 1;
+    $("#kopurua").html(kopb);
+    kalkul = ((prezio/kopz) + prezio).toFixed(2)
+    $("#prez").val(kalkul);
+  }
+
+  function kendu() {
+    <!--Kopurua -->
+    kopt = parseInt($("#kopurua").html())
+    if (kopt != 1) {
+      <!--Prezio totala -->
+      prezi = parseFloat($("#prez").val())
+
+      kopl = kopt - 1
+      $("#kopurua").html(kopl);
+      kalkulo = (prezi - (prezi/kopt)).toFixed(2);
+      $("#prez").val(kalkulo);
+    }
+  }
+</script>
 {% endblock content %} 
-{% block javascript %} 
+{% block javascript %}
+
 {% endblock javascript %}
