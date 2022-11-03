@@ -1,6 +1,7 @@
 from django.shortcuts import render, redirect
 from django.contrib.auth.models import User
 from django.contrib.auth.hashers import make_password
+from django.contrib.auth import login
 
 from .models import Bezeroak
 
@@ -17,6 +18,7 @@ def erregistratu(request):
     erabiltzailea = request.POST['username']
     izena=request.POST['first_name']
     abizena=request.POST['last_name']
+    nan=request.POST['dni']
     korreoa=request.POST['email']
     pasahitza=request.POST['password']
     pasahitza_errepikatu=request.POST['password_repeat']
@@ -28,6 +30,9 @@ def erregistratu(request):
         erabiltzailea = User(username=erabiltzailea, first_name=izena, last_name=abizena,email=korreoa,password=password)
 
         erabiltzailea.save()
+
+        bezeroa = Bezeroak(dni=nan, id_erabiltzaile=erabiltzailea)
+        bezeroa.save()
         return redirect('index')
 
     
