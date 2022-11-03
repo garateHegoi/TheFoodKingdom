@@ -9,18 +9,18 @@
         <form class="text-center">
           <img src="{% static 'img/usuario.png'%}"class="img-fluid rounded-circle p-2 mb-3" style="width:120px; border-radius: 10px; background-color: black;">
           <div class="form-group">
-            <input type="text" class="form-control input_form" id="inputErabiltzailea" placeholder="&#xf007;  Erabiltzailea">
+            <input type="text" class="form-control input_form" id="inputErabiltzailea" placeholder="&#xf007;  Erabiltzailea" value="{{user.username}}" required>
           </div>
           <div class="form-group">
-            <input type="text" class="form-control input_form" id="inputIzena" placeholder="&#xf007;  Izena">
+            <input type="text" class="form-control input_form" id="inputIzena" placeholder="&#xf007;  Izena" value="{{user.first_name}}" required>
           </div>
           <div class="form-group">
-            <input type="text" class="form-control input_form" id="inputAbizena" placeholder="&#xf007;  Abizena">
+            <input type="text" class="form-control input_form" id="inputAbizena" placeholder="&#xf007;  Abizena" value="{{user.last_name}}" required>
           </div>
           <div class="form-group">
-            <input type="number" class="form-control input_form" id="inputTelefonoa" placeholder="&#xf095;  Telefonoa">
+            <input type="number" class="form-control input_form" id="inputTelefonoa" placeholder="&#xf095;  Telefonoa" value="{{bezeroa.telefono_zenbakia}}">
           </div>
-          <button class="btn btn_log mt-2" type="submit">ERREGISTRATU</button>
+          <button class="btn btn_log mt-2" type="submit">GORDE ALDAKETAK</button>
         </form>
       </section>
     </div>

@@ -2,12 +2,15 @@ from django.shortcuts import render, redirect
 from django.contrib.auth.models import User
 from django.contrib.auth.hashers import make_password
 
+from .models import Bezeroak
+
 # Create your views here.
 def profila(request):
     return render(request, 'profila.html')
     
-def profilaaldatu(request):
-    return render(request, 'profilaaldatu.html')
+def profilaaldatu(request, id_erabiltzaile):
+    bezeroa= Bezeroak.objects.get(id_erabiltzaile=id_erabiltzaile)
+    return render(request, 'profilaaldatu.html',{'bezeroa':bezeroa})
 
 
 def erregistratu(request):
