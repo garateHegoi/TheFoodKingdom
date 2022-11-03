@@ -114,9 +114,7 @@
           for(let i=0; i<response.length;i++){
             kodigoa += '<div id="janaria" class="text-center">';
             
-            janari_id=response[i].id;
-            
-            kodigoa+='<a id="link">';
+            kodigoa+='<a id="link" href="/produktua/'+response[i].id+'">';
                
             kodigoa+='<img src="'+response[i].argazki_url+'">';
             kodigoa+='<p id="janari_izena">'+response[i].izena+'</p>';
