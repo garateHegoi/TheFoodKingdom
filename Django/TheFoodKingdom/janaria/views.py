@@ -1,6 +1,7 @@
 from django.shortcuts import render, redirect
 
 from bezeroa.forms import LoginForm
+from django.http import JsonResponse
 from .models import Janariak
 from django.contrib.auth import authenticate, login as auth_login, logout as auth_logout
 from django.contrib import messages
@@ -36,9 +37,10 @@ def karta(request):
     janariak = Janariak.objects.all()
     return render(request, 'karta.html',{'janariak':janariak})
 
-def karta_sailkatua(request, submota):
-    janariak = Janariak.objects.filter(submota=submota)
-    return render(request, 'karta.html',{'janariak':janariak})
+def karta_sailkatua(request):
+    submota = request.POST.get('submota')
+    janariak = list(Janariak.objects.filter(submota=submota).values())
+    return JsonResponse(janariak,safe=False)
 
 def kokapena(request):
     return render(request, 'kokapena.html')
