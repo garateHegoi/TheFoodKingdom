@@ -21,16 +21,22 @@
       {% endif %}
     </div>
     <div class="katitatea">
-      <h5>Prezioa</h5>
-      <input id="prez" type="text" value="{{produktua.prezioa}}" disabled />
+      <form method="post" action="{% url 'gehitu_saskira' %}">
+        {% csrf_token %}
+        <h5>Prezioa</h5>
+        <input type="text" value="{{produktua.id}}" style="display:none" name="id">
+
+      <input id="prez" type="text" value="{{produktua.prezioa}}" name="guztira" />
 
       <div>
         <a id="kendu"><i class="fa-solid fa-circle-minus icon"></i></a>
-       <p id="kopurua">1</p>
+       <input type="text" id="kopurua" value="1" name="kop" />
         <a id="gehitu"><i class="fa-solid fa-circle-plus icon"></i></a>
       </div>
 
-      <button>GEHITU</button>
+      <button type="submit">GEHITU</button>
+      </form>
+
     </div>
   </section>
 </div>

@@ -12,4 +12,5 @@ urlpatterns=[
     path('profila<int:id>/',views.profila,name='profila'),
     path('saskia/',views.saskia,name='saskia'),
     path('produktua/<int:id>',views.produktua,name='produktua'),
+
     ]

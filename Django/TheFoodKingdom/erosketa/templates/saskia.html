@@ -5,32 +5,25 @@
     <div class="container saskia my-5">
         <section class="saski_guztia">
             <h1>Saskia</h1>
+            {% for saski in saskia %}
             <div class="saski_bakoitza">
                 <div>
-                    <img src="{% static 'img/enchilada.jpg'%}">
+                    <img src="{{saski.janari_id.argazki_url}}">
                 </div>
                 <div>
-                    <p>Hanburgesa jugosa</p>
-                    <p>9€</p>
+                    <p>{{saski.janari_id.izena}}</p>
+                    
+                    <p> x{{saski.kantitate_kopurua}}</p>
+
+                    <p> x{{saski.guztira}}€</p>
+                   
                 </div>
                 <div class="d-flex flex-row align-items-center justify-content-center">
                     <i class="fa-solid fa-pen"></i>
-                    <i class="fa-solid fa-trash-can"></i>
+                    <a href="{% url 'ezabatu_saskia' id=saski.id %}" ><i class="fa-solid fa-trash-can"></i></a>
                 </div>
             </div>
-            <div class="saski_bakoitza">
-                <div>
-                    <img src="{% static 'img/enchilada.jpg'%}">
-                </div>
-                <div>
-                    <p>Hanburgesa jugosa</p>
-                    <p>9€</p>
-                </div>
-                <div class="d-flex flex-row align-items-center justify-content-center">
-                    <i class="fa-solid fa-pen"></i>
-                    <i class="fa-solid fa-trash-can"></i>
-                </div>
-            </div>
+            {% endfor %}
         </section>
     </div>
     
