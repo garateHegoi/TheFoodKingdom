@@ -25,16 +25,21 @@
         {% csrf_token %}
         <h5>Prezioa</h5>
         <input type="text" value="{{produktua.id}}" style="display:none" name="id">
-
-      <input id="prez" type="text" value="{{produktua.prezioa}}" name="guztira" />
-
-      <div>
-        <a id="kendu"><i class="fa-solid fa-circle-minus icon"></i></a>
-       <input type="text" id="kopurua" value="1" name="kop" />
-        <a id="gehitu"><i class="fa-solid fa-circle-plus icon"></i></a>
-      </div>
-
-      <button type="submit">GEHITU</button>
+        <input id="prezioa" type="text" value="{{produktua.prezioa}}" style="display:none" name="prezioa">
+      
+        <input id="guzt" type="text" value="{{produktua.prezioa}}" name="guztira" />
+      
+        <div>
+          <a id="kendu"><i class="fa-solid fa-circle-minus icon"></i></a>
+          {% if saskia %}
+          <input type="text" id="kopurua" value="{{saskia.kantitate_kopurua}}" name="kop" />
+          {% else %}
+          <input type="text" id="kopurua" value="1" name="kop" />
+          {% endif %}
+          <a id="gehitu"><i class="fa-solid fa-circle-plus icon"></i></a>
+        </div>
+      
+        <button type="submit">GEHITU</button>
       </form>
 
     </div>

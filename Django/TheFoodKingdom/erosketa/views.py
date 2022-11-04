@@ -1,5 +1,7 @@
 from django.shortcuts import render, redirect
 
+from janaria.models import Janariak
+
 from .models import Saskiak
 
 # Create your views here.
@@ -21,3 +23,7 @@ def ezabatu_saskia(request, id):
     saskia.delete()
     return redirect('saskia')
 
+def saskia_info(request, id):
+    saskia = Saskiak.objects.get(id=id)
+    produktua = Janariak.objects.get(id=saskia.janari_id.id)
+    return render(request, 'produktua.html', {'saskia':saskia, 'produktua':produktua})
