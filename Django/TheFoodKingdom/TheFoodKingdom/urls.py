@@ -24,5 +24,5 @@ urlpatterns = [
     path('', include('django.contrib.auth.urls')),
     path('profila/', include('bezeroa.urls')),
     path('saskia/', include('erosketa.urls')),
-    path('', include('erosketa.urls')),
+    #path('', include('erosketa.urls')),
 ]
