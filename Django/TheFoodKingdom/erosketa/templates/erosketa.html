@@ -1,0 +1,39 @@
+{% extends "base.html" %} {% load static %} {% block title %}The Food Kingdom |
+Erosketa{% endblock title%} {% block content %}
+
+<div class="container d-flex flex-column align-items-center my-2">
+  <section>
+    <h1 class>EROSTEKO PROZESUA</h1>
+    <h5 class><a style="background-color:white;">1.- Erabiltzailearen datuak</a><i class="fa-solid fa-arrow-right"></i><a>2.- Ordainketa metodoak</a><i class="fa-solid fa-arrow-right"></i><a>3.- Erosketaren laburpena</a></h5>
+  <a class href="#">Erregistratu hemen</a>
+  <div class="container d-flex flex-column align-items-center my-2">
+        <h1>Helbidea</h1>
+        <form method="post" action="{% url 'login' %}">
+        {% csrf_token %}
+        {{form}}
+        <button class="btn btn_log" type="submit">SARTU</button>
+    </form>
+          <form method="post" class="text-center">
+            {% csrf_token %}
+            <div class="form-group">
+              <input type="text" class="form-control input_form" id="inputTelefonoa" placeholder="&#xf007;  Telefonoa" name="telefonoa">
+            </div>
+            <div class="form-group">
+              <input type="text" class="form-control input_form" id="inputHerria" placeholder="&#xf007;  Herria" name="herria">
+            </div>
+            <div class="form-group">
+              <input type="text" class="form-control input_form" id="inputProbintzia" placeholder="&#xf007;  Probintzia" name="probintzia">
+            </div>
+            <div class="form-group">
+              <input type="text" class="form-control input_form" id="inputHelbidea" placeholder="&#xf0e0;  Helbidea" name="helbidea">
+            </div>
+            <div class="form-group">
+              <input type="text" class="form-control input_form" id="inputPK" placeholder="&#xf023;  PK" name="ok">
+            </div>
+  
+            <button class="btn btn_log mt-2" type="submit">JARRAITU</button>
+          </form>
+  </div>
+    </section>
+  </div>
+{% endblock content %} {% block javascript %} {% endblock javascript %}
