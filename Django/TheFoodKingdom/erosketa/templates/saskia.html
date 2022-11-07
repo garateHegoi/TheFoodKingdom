@@ -6,13 +6,13 @@
         <section class="saski_guztia">
             <h1>Saskia</h1>
             {% for saski in saskia %}
-            <div class="saski_bakoitza">
+            <div class="saski_bakoitza {{saski.id}}">
                 <div>
                     <img src="{{saski.janari_id.argazki_url}}">
                 </div>
                 <div>
                     <p>{{saski.janari_id.izena}}</p>
-                    
+                    <input type="hidden" class="saski_id" value="{{saski.id}}">
                     <p> x{{saski.kantitate_kopurua}}</p>
 
                     <p> x{{saski.guztira}}€</p>
@@ -20,12 +20,36 @@
                 </div>
                 <div class="d-flex flex-row align-items-center justify-content-around">
                     <a href="{% url 'saskia_info' id=saski.id %}"><i class="fa-solid fa-pen"></i></a> 
-                    <a href="{% url 'ezabatu_saskia' id=saski.id %}" ><i class="fa-solid fa-trash-can"></i></a>
+                    <a class="ezabatu" href="" ><i class="fa-solid fa-trash-can"></i></a>
                 </div>
             </div>
             {% endfor %}
         </section>
     </div>
+
+    <script>
+        $(document).ready(function () {
+            $(".ezabatu").click(function (e) {
+                e.preventDefault();
+
+                let id=$(this).closest(".saski_bakoitza").find(".saski_id").val();
+                //alert(id)
+                let csrftoken = '{{ csrf_token }}';
+                let datuak= {id:id}
+
+                $.ajax({
+                    type:'POST',
+                    headers:{'X-CSRFToken':csrftoken},
+                    url: "{% url 'ezabatu_saskia' %}",
+                    data: datuak,
+                    dataType:'json',
+                    success: function (response) {
+                        $("."+response[0].id).remove()
+                    },
+                })
+            });
+        });
+    </script>
     
     {% endblock content %}
     {% block javascript %}

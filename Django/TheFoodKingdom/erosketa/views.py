@@ -1,5 +1,5 @@
 from django.shortcuts import render, redirect
-
+from django.http import JsonResponse
 from janaria.models import Janariak
 
 from .models import Saskiak
@@ -19,10 +19,16 @@ def gehitu_saskira(request):
     return redirect('saskia')
 
 
-def ezabatu_saskia(request, id):
-    saskia = Saskiak.objects.get(id=id)
+def ezabatu_saskia(request):
+    saskia_id = int(request.POST.get('id'))
+    print(saskia_id)
+    saskia = Saskiak.objects.get(id=saskia_id)
+
+    saskia_bid = list(Saskiak.objects.filter(id=saskia_id).values())
+
     saskia.delete()
-    return redirect('saskia')
+
+    return JsonResponse(saskia_bid, safe=False)
 
 def saskia_info(request, id):
     saskia = Saskiak.objects.get(id=id)
