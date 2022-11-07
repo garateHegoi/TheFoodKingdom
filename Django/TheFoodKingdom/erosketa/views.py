@@ -12,11 +12,17 @@ def saskia(request):
 
 def gehitu_saskira(request):
     id = request.POST['id']
-    kop = request.POST.get('kop')
-    guzt = request.POST.get('guztira')
-    # Gehitu erosketa
-    saskia = Saskiak(janari_id_id=id, kantitate_kopurua=kop, guztira=guzt)
-    saskia.save()
+    kop = int(request.POST.get('kop'))
+    guzt = float(request.POST.get('guztira'))
+    saskiak = list(Saskiak.objects.filter(janari_id_id=id))
+    if saskiak:
+        saskiak[0].kantitate_kopurua = kop
+        saskiak[0].guztira = guzt
+        saskiak[0].save()
+    else:
+        # Gehitu erosketa
+        saskia = Saskiak(janari_id_id=id, kantitate_kopurua=kop, guztira=guzt)
+        saskia.save()
     return redirect('saskia')
 
 
