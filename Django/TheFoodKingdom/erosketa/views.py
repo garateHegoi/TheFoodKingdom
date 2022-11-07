@@ -2,7 +2,7 @@ from django.shortcuts import render, redirect
 from django.http import JsonResponse
 from janaria.models import Janariak
 
-from .models import Saskiak
+from .models import Erosketak, Saskiak
 
 # Create your views here.
 def saskia(request):
@@ -14,15 +14,16 @@ def gehitu_saskira(request):
     id = request.POST['id']
     kop = int(request.POST.get('kop'))
     guzt = float(request.POST.get('guztira'))
-    saskiak = list(Saskiak.objects.filter(janari_id_id=id))
-    if saskiak:
-        saskiak[0].kantitate_kopurua = kop
-        saskiak[0].guztira = guzt
-        saskiak[0].save()
-    else:
-        # Gehitu erosketa
-        saskia = Saskiak(janari_id_id=id, kantitate_kopurua=kop, guztira=guzt)
-        saskia.save()
+
+    erosketa, sortuta = Erosketak.objects.get_or_create(ordaintzeko_guztira=12)
+
+    sas, sortuta = Saskiak.objects.get_or_create(janari_id_id=id, kantitate_kopurua=kop, guztira=guzt)
+
+    if(not sortuta):
+        sas.kantitate_kopurua = kop
+        sas.guztira = guzt
+    sas.erosketa_id=erosketa
+    sas.save()
     return redirect('saskia')
 
 
