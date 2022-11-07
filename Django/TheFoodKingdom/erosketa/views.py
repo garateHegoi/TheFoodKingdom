@@ -13,6 +13,7 @@ def gehitu_saskira(request):
     id = request.POST['id']
     kop = request.POST.get('kop')
     guzt = request.POST.get('guztira')
+    # Gehitu erosketa
     saskia = Saskiak(janari_id_id=id, kantitate_kopurua=kop, guztira=guzt)
     saskia.save()
     return redirect('saskia')
