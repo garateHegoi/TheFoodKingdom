@@ -10,8 +10,8 @@ class Erosketak(models.Model):
     id = models.AutoField(primary_key=True)
     eguna = models.DateField(null=True)
     ordua = models.TimeField(null=True)
-    ordaintzeko_guztira = models.IntegerField(validators=[
-        MinValueValidator(0)])
+    ordaintzeko_guztira = models.DecimalField(decimal_places=2, max_digits=10, validators=[
+        MinValueValidator(0)], default=0)
     bezero_dni = models.ForeignKey(Bezeroak, on_delete=models.CASCADE, null=True)
     session_id = models.CharField(max_length=100, null=True)
     def __str__(self):

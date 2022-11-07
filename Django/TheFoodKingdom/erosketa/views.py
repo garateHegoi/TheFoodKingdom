@@ -15,15 +15,29 @@ def gehitu_saskira(request):
     kop = int(request.POST.get('kop'))
     guzt = float(request.POST.get('guztira'))
 
-    erosketa, sortuta = Erosketak.objects.get_or_create(ordaintzeko_guztira=12)
+    # Erosketa sortu
+    erosketa, sortuta = Erosketak.objects.get_or_create()
+    print(erosketa)
+    print(sortuta)
 
-    sas, sortuta = Saskiak.objects.get_or_create(janari_id_id=id, kantitate_kopurua=kop, guztira=guzt)
-
-    if(not sortuta):
-        sas.kantitate_kopurua = kop
-        sas.guztira = guzt
-    sas.erosketa_id=erosketa
-    sas.save()
+    saski = list(Saskiak.objects.filter(janari_id_id=id))
+    if saski:
+        # Aldatu erosketa
+        saski[0].kantitate_kopurua = kop
+        saski[0].guztira = guzt
+        saski[0].erosketa_id=erosketa
+        saski[0].save()
+    else:
+        # Gehitu erosketa
+        saskia = Saskiak(janari_id_id=id, kantitate_kopurua=kop, guztira=guzt, erosketa_id=erosketa)
+        saskia.save()
+    
+    # Saski guztiak hartu eta guztira kalkulatu
+    saskiak = list(Saskiak.objects.all())
+    erosketa.ordaintzeko_guztira=0 
+    for x in saskiak:   
+        erosketa.ordaintzeko_guztira+= x.guztira
+    erosketa.save()
     return redirect('saskia')
 
 
