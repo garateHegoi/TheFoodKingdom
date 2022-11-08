@@ -9,6 +9,7 @@ urlpatterns = [
     path('erosketa/', views.erosketa, name='erosketa'),
     path('erosketaOrdainketa/', views.erosketaOrdainketa, name='erosketaOrdainketa'),
     path('erosketa/erosketaOrdainketa/', views.erosketaOrdainketa, name='erosketaOrdainketa'),
+    path('erosketa/erosketaOrdainketa/erosketarenLaburpena', views.erosketarenLaburpena, name='erosketarenLaburpena'),
 
 
 ]

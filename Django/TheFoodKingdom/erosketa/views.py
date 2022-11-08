@@ -71,3 +71,6 @@ def erosketa(request):
 
 def erosketaOrdainketa(request):
     return render(request, 'erosketaOrdainketa.html')
+
+def erosketarenLaburpena(request):
+    return render(request, 'erosketarenLaburpena.html')

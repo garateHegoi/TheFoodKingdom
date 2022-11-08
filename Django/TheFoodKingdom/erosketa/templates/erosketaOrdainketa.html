@@ -2,10 +2,12 @@
 Erosketa{% endblock title%} {% block content %}
 
 <div class="container d-flex flex-column align-items-center my-2">
+    <br><br>
     <section class="saski_guztia">
         <h1 class>EROSTEKO PROZESUA</h1>
         <h5><a>1.Erabiltzailearen datuak</a> &nbsp;<i
-                class="fa-solid fa-arrow-right"></i>&nbsp;&nbsp;<a style="background-color:white; border-radius:40px; padding:5px 5px;">2.Ordainketa metodoak</a>&nbsp;&nbsp;<i
+                class="fa-solid fa-arrow-right"></i>&nbsp;&nbsp;<a
+                style="background-color:white; border-radius:40px; padding:5px 5px;">2.Ordainketa metodoak</a>&nbsp;&nbsp;<i
                 class="fa-solid fa-arrow-right"></i>&nbsp;&nbsp;<a>3.Erosketaren laburpena</a></h5>
 
         <section>
@@ -15,14 +17,14 @@ Erosketa{% endblock title%} {% block content %}
                     <div class="col-6">
                         <form method="post" action="#">
                             <input type="radio" id="txartela" name="ordainketaMet" value="txartela">
-                            <label for="txartela"><img src="{% static 'img/Rectangle35.png'%}"></img></label><br>
+                            <label for="txartela"><img src="{% static 'img/Rectangle35.png'%}"></label><br>
                             <input type="radio" id="paypal" name="ordainketaMet" value="paypal">
-                            <label for="paypal"><img src="{% static 'img/Paypal.png'%}"></img></label><br>
+                            <label for="paypal"><img src="{% static 'img/Paypal.png'%}"></label><br>
                         </form>
                     </div>
 
                     <div class="col-6">
-                        <form method="post" class="text-center">
+                        <form method="post" class="needs-validation">
                             {% csrf_token %}
                             <h5>Txartel datuak</h5>
                             <div class="form-group">
@@ -42,17 +44,28 @@ Erosketa{% endblock title%} {% block content %}
                                        placeholder="&#xf0e0;  CCV" name="CCV" required>
                             </div>
 
-                            <button class="btn btn_jarraitu mt-2" type="submit">JARRAITU</button>
+                            <button class="btn btn_jarraitu mt-2" type="submit" onclick="myFunction()">JARRAITU</button>
                         </form>
                     </div>
                 </div>
-
             </div>
-
         </section>
     </section>
+    <br><br>
 </div>
-
+<script>
+function myFunction() {
+  $(".needs-validation").on("submit", function (e) {
+    $(this).addClass("was-validated");
+    e.preventDefault();
+    if (!this.checkValidity()) {
+      e.stopPropagation();
+    } else {
+       window.location='erosketarenLaburpena'
+    }
+  });
+}
+</script>
 {% endblock content %}
-{% block javascript %} 
+{% block javascript %}
 {% endblock javascript %}
