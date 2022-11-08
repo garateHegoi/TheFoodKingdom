@@ -1,12 +1,56 @@
 {% extends "base.html" %} {% load static %} {% block title %}The Food Kingdom |
 Erosketa{% endblock title%} {% block content %}
 
-<div class="container d-flex flex-column align-items-center my-5">
-  <section class="profila_aldatu_div">
-    <h1 class="text-center">EROSTEKO PROZESUA</h1>
-    <h2 class="text-center">Erabiltzailearen datuak -></h2>
-    <h2 class="text-center">Ordainketa metodoak -></h2>
-    <h2 class="text-center">Erosketaren laburpena</h2>
-  </section>
+<div class="container d-flex flex-column align-items-center my-2">
+    <section class="saski_guztia">
+        <h1 class>EROSTEKO PROZESUA</h1>
+        <h5><a>1.Erabiltzailearen datuak</a> &nbsp;<i
+                class="fa-solid fa-arrow-right"></i>&nbsp;&nbsp;<a style="background-color:white; border-radius:40px; padding:5px 5px;">2.Ordainketa metodoak</a>&nbsp;&nbsp;<i
+                class="fa-solid fa-arrow-right"></i>&nbsp;&nbsp;<a>3.Erosketaren laburpena</a></h5>
+
+        <section>
+            <br><br>
+            <div class="container">
+                <div class="row">
+                    <div class="col-6">
+                        <form method="post" action="#">
+                            <input type="radio" id="txartela" name="ordainketaMet" value="txartela">
+                            <label for="txartela"><img src="{% static 'img/Rectangle35.png'%}"></img></label><br>
+                            <input type="radio" id="paypal" name="ordainketaMet" value="paypal">
+                            <label for="paypal"><img src="{% static 'img/Paypal.png'%}"></img></label><br>
+                        </form>
+                    </div>
+
+                    <div class="col-6">
+                        <form method="post" class="text-center">
+                            {% csrf_token %}
+                            <h5>Txartel datuak</h5>
+                            <div class="form-group">
+                                <input type="text" maxlength="16" class="form-control input_form" id="inputTxart"
+                                       placeholder="&#xf007;  Txartel zenbakia" name="txartelaZbk" required>
+                            </div>
+                            <div class="form-group">
+                                <input type="month" class="form-control input_form" id="inputdata"
+                                       placeholder="&#xf007;  Iraungitze data" name="iraungitzeData" required>
+                            </div>
+                            <div class="form-group">
+                                <input type="text" class="form-control input_form" id="inputTitularra"
+                                       placeholder="&#xf007;  Titularra" name="titularra" required>
+                            </div>
+                            <div class="form-group">
+                                <input type="password" maxlength="3" class="form-control input_form" id="inputHelbidea"
+                                       placeholder="&#xf0e0;  CCV" name="CCV" required>
+                            </div>
+
+                            <button class="btn btn_jarraitu mt-2" type="submit">JARRAITU</button>
+                        </form>
+                    </div>
+                </div>
+
+            </div>
+
+        </section>
+    </section>
 </div>
+
 {% endblock content %} {% block javascript %} {% endblock javascript %}

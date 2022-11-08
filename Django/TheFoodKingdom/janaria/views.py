@@ -60,3 +60,4 @@ def produktua(request, id):
 
 def erosketa(request):
     return render(request, 'erosketa.html')
+

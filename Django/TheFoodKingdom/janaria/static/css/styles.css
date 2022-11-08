@@ -187,20 +187,31 @@ nav.navbar {
   border-color: #fff !important;
 }
 
-.btn_log {
+.btn_jarraitu {
   background-color: #0038a8;
-  color: #fff;
-  padding: 1% 6% 1% 6%!;
-  border-radius: 1em;
+  color:white;
+  padding: 4% 7% !important;
+  border-radius: 2em !important;
   margin-bottom: 10px;
+  height: 50px;
 }
 
 .btn_log {
   background-color: #0038a8;
-  color: #fff;
   padding: 4% 7% !important;
   border-radius: 2em !important;
   margin-bottom: 10px;
+  height: 50px;
+}
+
+
+.btn_sartu {
+  background-color: #0038a8;
+  color: #fff;
+  padding: 0% 7% !important;
+  border-radius: 2em !important;
+  margin-bottom: 10px;
+  height: 50px;
 }
 
 /* Karta */
@@ -556,10 +567,30 @@ nav.navbar {
   right: 0;
 }
 
+.text_color{
+    color: white;
+}
+
+.text_color:hover{
+    color: white;
+}
+
 .a_color{
-    color: black;
+    color: white;
 }
 
 .a_color:hover{
-    color:white;
+    color: black;
+}
+
+.form-check{
+    margin-right: 180px;
+}
+
+.linea_vertical{
+   border-left: thick solid white;
+   margin-top:20px;
+   height:40%;
+   right: 915px;
+   position: absolute;
 }

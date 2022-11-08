@@ -62,5 +62,5 @@ def erosketa(request):
     return render(request, 'erosketa.html')
 
 
-def erosketaOrd(request):
-    return render(request, 'erosketaOrd.html')
+def erosketaOrdainketa(request):
+    return render(request, 'erosketaOrdainketa.html')

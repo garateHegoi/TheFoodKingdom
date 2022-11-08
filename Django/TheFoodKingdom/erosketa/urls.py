@@ -7,5 +7,8 @@ urlpatterns = [
     path('ezabatu_saskia/',views.ezabatu_saskia,name='ezabatu_saskia'),
     path('saskia_info/<int:id>',views.saskia_info,name='saskia_info'),
     path('erosketa/', views.erosketa, name='erosketa'),
-    path('erosketaOrd/', views.erosketaOrd, name='erosketaOrd'),
+    path('erosketaOrdainketa/', views.erosketaOrdainketa, name='erosketaOrdainketa'),
+    path('erosketa/erosketaOrdainketa/', views.erosketaOrdainketa, name='erosketaOrdainketa'),
+
+
 ]

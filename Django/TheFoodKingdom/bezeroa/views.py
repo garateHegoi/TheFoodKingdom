@@ -54,4 +54,5 @@ def erregistratu(request):
         bezeroa.save()
         return redirect('index')
 
-    
+def erregistroa(request):
+    return render(request, 'erregistroa.html')
