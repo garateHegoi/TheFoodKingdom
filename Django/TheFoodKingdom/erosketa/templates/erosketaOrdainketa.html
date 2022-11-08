@@ -15,10 +15,10 @@ Erosketa{% endblock title%} {% block content %}
             <div class="container">
                 <div class="row">
                     <div class="col-6">
-                        <form method="post" action="#">
-                            <input type="radio" id="txartela" name="ordainketaMet" value="txartela">
+                        <form method="post">
+                            <input type="radio" id="txartela" name="ordainketaMet" value="txartela" checked>
                             <label for="txartela"><img src="{% static 'img/Rectangle35.png'%}"></label><br>
-                            <input type="radio" id="paypal" name="ordainketaMet" value="paypal">
+                            <input type="radio" id="paypal" name="ordainketaMet" value="paypal" onclick="paypal()">
                             <label for="paypal"><img src="{% static 'img/Paypal.png'%}"></label><br>
                         </form>
                     </div>
@@ -54,16 +54,8 @@ Erosketa{% endblock title%} {% block content %}
     <br><br>
 </div>
 <script>
-function myFunction() {
-  $(".needs-validation").on("submit", function (e) {
-    $(this).addClass("was-validated");
-    e.preventDefault();
-    if (!this.checkValidity()) {
-      e.stopPropagation();
-    } else {
-       window.location='erosketarenLaburpena'
-    }
-  });
+function paypal() {
+    window.location="https://www.paypal.com/cgi-bin/webscr"
 }
 </script>
 {% endblock content %}
