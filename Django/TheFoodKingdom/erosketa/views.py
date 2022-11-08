@@ -1,22 +1,50 @@
 from django.shortcuts import render, redirect
 from django.http import JsonResponse
 from janaria.models import Janariak
-
-from .models import Saskiak
+import uuid
+from .models import Erosketak, Saskiak
 
 # Create your views here.
 def saskia(request):
-    saskia = Saskiak.objects.all
-    print(saskia)
-    return render(request, 'saskia.html', {'saskia':saskia})
+    erosketak= list(Erosketak.objects.filter(session_id=request.session['nonuser']))
+
+    if erosketak:
+        saskia = Saskiak.objects.filter(erosketa_id=erosketak[0].id)
+        return render(request, 'saskia.html', {'saskia':saskia})
+    else:
+        return render(request, 'saskia.html')
 
 def gehitu_saskira(request):
     id = request.POST['id']
-    kop = request.POST.get('kop')
-    guzt = request.POST.get('guztira')
-    # Gehitu erosketa
-    saskia = Saskiak(janari_id_id=id, kantitate_kopurua=kop, guztira=guzt)
-    saskia.save()
+    kop = int(request.POST.get('kop'))
+    guzt = float(request.POST.get('guztira'))
+
+    # Erosketa sortu
+    try:
+        erosketa= Erosketak.objects.get(session_id=request.session['nonuser'])
+    except:
+        request.session['nonuser'] = str(uuid.uuid4())
+        erosketa= Erosketak.objects.create(session_id=request.session['nonuser'])
+    print(erosketa)
+
+    saski = list(Saskiak.objects.filter(janari_id_id=id))
+    if saski:
+        # Aldatu erosketa
+        saski[0].kantitate_kopurua = kop
+        saski[0].guztira = guzt
+        saski[0].erosketa_id=erosketa
+        saski[0].save()
+    else:
+        # Gehitu erosketa
+        saskia = Saskiak(janari_id_id=id, kantitate_kopurua=kop, guztira=guzt, erosketa_id=erosketa)
+        saskia.save()
+    
+    # Saski guztiak hartu eta guztira kalkulatu
+    saskiak = list(Saskiak.objects.all())
+    erosketa.ordaintzeko_guztira=0 
+    for x in saskiak:   
+        erosketa.ordaintzeko_guztira+= x.guztira
+    erosketa.save()
     return redirect('saskia')
 
 

@@ -57,3 +57,6 @@ def saskia(request):
 def produktua(request, id):
     produktua=Janariak.objects.get(id=id)
     return render(request, 'produktua.html',{'produktua':produktua})
+
+def erosketa(request):
+    return render(request, 'erosketa.html')
