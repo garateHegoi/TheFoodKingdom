@@ -76,15 +76,11 @@ WSGI_APPLICATION = 'TheFoodKingdom.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
-    }, 
-    'new':{
         'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'the_food_kingdom',
+        'NAME': 'thefoodkingdom',
         'USER': 'tfk',
         'PASSWORD': 'tfk123',
-        'HOST': '192.168.73.7',
+        'HOST': '192.168.73.47',
         'PORT': '3306',
     }
 }
