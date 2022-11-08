@@ -3,7 +3,6 @@ Erosketa{% endblock title%} {% block content %}
 
 <div class="container d-flex flex-column align-items-center my-2">
     <section class="saski_guztia">
-<<<<<<< HEAD
         <h1>EROSTEKO PROZESUA</h1>
         <h5><a style="background-color:white; border-radius:40px; padding:5px 5px;">1.Erabiltzailearen datuak</a> &nbsp;<i
                 class="fa-solid fa-arrow-right"></i>&nbsp;&nbsp;<a>2.Ordainketa metodoak</a>&nbsp;&nbsp;<i
@@ -92,55 +91,3 @@ function myFunction() {
 {% endblock content %}
 {% block javascript %}
 {% endblock javascript %}
-=======
-        <h1 class>EROSTEKO PROZESUA</h1>
-        <h5><a style="background-color:white;border-radius:40px;padding:3px 3px;">1.- Erabiltzailearen datuak</a><i
-                class="fa-solid fa-arrow-right"></i><a> 2.- Ordainketa metodoak </a><i
-                class="fa-solid fa-arrow-right"> </i> <a> 3.- Erosketaren laburpena</a></h5>
-
-        <section class="eskariak">
-            <div>
-                <div class="eskari_info">
-                    <form method="post" action="{% url 'login' %}">
-                        {% csrf_token %}
-                        <br><br>
-                        <a class href="{% url 'erregistroa' %}">Erregistratu hemen</a>
-                        <br><br>
-                        {{form}}
-                        <button class="btn btn_log" type="submit">Hasi sesioa</button>
-                    </form>
-                </div>
-            </div>
-            <div class="eskari_info">
-                <form method="post" class="text-center" action="{% url 'erosketaOrd' %}">
-                    {% csrf_token %}
-                    <h5>Helbidea</h5>
-                    <div class="form-group">
-                        <input type="text" class="form-control input_form" id="inputTelefonoa"
-                               placeholder="&#xf007;  Telefonoa" name="telefonoa">
-                    </div>
-                    <div class="form-group">
-                        <input type="text" class="form-control input_form" id="inputHerria"
-                               placeholder="&#xf007;  Herria" name="herria">
-                    </div>
-                    <div class="form-group">
-                        <input type="text" class="form-control input_form" id="inputProbintzia"
-                               placeholder="&#xf007;  Probintzia" name="probintzia">
-                    </div>
-                    <div class="form-group">
-                        <input type="text" class="form-control input_form" id="inputHelbidea"
-                               placeholder="&#xf0e0;  Helbidea" name="helbidea">
-                    </div>
-                    <div class="form-group">
-                        <input type="text" class="form-control input_form" id="inputPK" placeholder="&#xf023;  PK"
-                               name="pk">
-                    </div>
-
-                    <button class="btn btn_log mt-2" type="submit">JARRAITU</button>
-                </form>
-            </div>
-        </section>
-    </section>
-</div>
-{% endblock content %} {% block javascript %} {% endblock javascript %}
->>>>>>> 92ac84638eab9082bebe687edeefc97d6d06307c
