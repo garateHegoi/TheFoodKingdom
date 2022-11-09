@@ -13,7 +13,7 @@ class Erosketak(models.Model):
     ordaintzeko_guztira = models.DecimalField(decimal_places=2, max_digits=10, validators=[
         MinValueValidator(0)], default=0)
     bezero_dni = models.ForeignKey(Bezeroak, on_delete=models.CASCADE, null=True)
-    session_id = models.CharField(max_length=100, null=True)
+    bukatuta = models.BooleanField(null=True)
     def __str__(self):
         return '%s' % self.id
 
