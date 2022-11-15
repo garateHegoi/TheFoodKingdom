@@ -225,9 +225,10 @@ nav.navbar {
 
 .btn_trukatu {
   background-color: #0038a8;
-  padding:2% 2% 2% 2% !important;
+  padding:4% 4% 4% 4% !important;
   border-radius: 2em !important;
   height: fit-content;
+  color: white;
 }
 
 .btn_sartu {
@@ -660,7 +661,8 @@ nav.navbar {
   border-radius: 50px;
   margin-top: 20px;
   border: solid 2px black;
-
+  padding: 10px 0;
+  align-items: center;
 }
 
 .linea_horizontal{
