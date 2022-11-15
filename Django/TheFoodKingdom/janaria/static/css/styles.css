@@ -5,7 +5,6 @@
 .user_icon {
   max-width: 60px;
   color: #fff;
-  margin-right: 170px;
   padding-bottom: 1em;
   padding-top: 1em;
 }
@@ -214,9 +213,10 @@ nav.navbar {
 
 .btn_trukatu {
   background-color: #0038a8;
-  padding:2% 2% 2% 2% !important;
+  padding:4% 4% 4% 4% !important;
   border-radius: 2em !important;
   height: fit-content;
+  color: white;
 }
 
 .btn_sartu {
@@ -640,7 +640,8 @@ nav.navbar {
     background-color: white;
     border-radius: 50px;
     margin-top: 20px;
-
+  padding: 10px 0;
+  align-items: center;
 }
 
 .linea_horizontal{
