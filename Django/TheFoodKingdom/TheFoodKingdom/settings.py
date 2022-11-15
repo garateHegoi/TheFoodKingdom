@@ -79,7 +79,7 @@ DATABASES = {
         'ENGINE': 'django.db.backends.mysql',
         'NAME': 'thefoodkingdom',
         'USER': 'tfk',
-        'PASSWORD': 'tfk123',
+        'PASSWORD': 'tfk',
         'HOST': '192.168.73.47',
         'PORT': '3306',
     }

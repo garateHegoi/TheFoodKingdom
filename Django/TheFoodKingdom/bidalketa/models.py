@@ -1,11 +1,7 @@
-from datetime import datetime
-from time import strftime
-
 from django.db import models
-from django.core.validators import MinValueValidator, MaxValueValidator, RegexValidator
+from django.core.validators import RegexValidator
 
 from bezeroa.models import Bezeroak
-from django.forms import DateInput
 
 from erosketa.models import Erosketak
 
