@@ -16,13 +16,10 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path, include
 
-from django.views.generic.base import TemplateView
-
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', include('janaria.urls')),
     path('', include('django.contrib.auth.urls')),
-    path('profila/', include('bezeroa.urls')),
-    path('saskia/', include('erosketa.urls')),
-    #path('', include('erosketa.urls')),
+    path('', include('bezeroa.urls')),
+    path('', include('erosketa.urls')),
 ]

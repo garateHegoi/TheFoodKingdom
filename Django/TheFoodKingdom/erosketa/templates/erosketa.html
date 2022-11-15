@@ -1,72 +1,61 @@
-{% extends "base.html" %} {% load static %} {% block title %}The Food Kingdom |
-Erosketa{% endblock title%} {% block content %}
+{% extends "base.html" %} 
+{% load static %} 
+{% block title %}The Food Kingdom | Erosketa{% endblock title%} 
+{% block content %}
 
 <div class="container d-flex flex-column align-items-center my-2">
     <br><br>
     <section class="saski_guztia">
         <h1>EROSTEKO PROZESUA</h1>
-        <h5><a style="background-color:white; border-radius:40px; padding:5px 5px;">1.Erabiltzailearen datuak</a> &nbsp;<i
+        <h5><a class="style_white">1.Erabiltzailearen datuak</a> &nbsp;<i
                 class="fa-solid fa-arrow-right"></i>&nbsp;&nbsp;<a>2.Ordainketa metodoak</a>&nbsp;&nbsp;<i
                 class="fa-solid fa-arrow-right"></i>&nbsp;&nbsp;<a>3.Erosketaren laburpena</a></h5>
         <div class="container">
             <div class="row">
-                <div class="col-6">
-                    <h1 class="mt-4">
-                        <a class="a_color" href="{% url 'erregistroa' %}">Erregistratu hemen</a>
-                    </h1>
-                    <h1 class="mt-4">
-                        edo
-                    </h1>
-                    <h1 class="mt-4">
-                        Hasi saioa
-                    </h1>
-                    <br>
-                    <form method="post" class="text-center">
-                        {% csrf_token %}
+                <div class="col-6 d-flex flex-column justify-content-center">
+                    <form class="text-center">
+                        <h1>Zure kontua</h1>
+                        <br>
                         <div class="form-group">
                             <input type="text" class="form-control input_form" id="inputUser"
-                                   placeholder="&#xf007;  Erabiltzailea" name="erabiltzailea">
+                                   placeholder="&#xf007;  Erabiltzailea" name="erabiltzailea" value="{{user.username}}" disabled>
                         </div>
                         <div class="form-group">
                             <input type="text" class="form-control input_form" id="inputPassword"
-                                   placeholder="&#xf023;  Pasahitza" name="password">
+                                placeholder="&#xf0e0;  Korreoa" name="korreoa" value="{{user.email}}" disabled>
                         </div>
-
-
-                        <button class="btn btn_sartu mt-4" type="submit">SARTU</button>
-                        <br><br>
                     </form>
 
                 </div>
                 <div class="linea_vertical"></div>
                 <div class="col-6">
                     <div class="container d-flex flex-column align-items-center"><br>
-                        <h1>Hainbat datu</h1>
+                        <h1>Bidalketa datuak</h1>
 
-                        <form method="post" class="needs-validation">
+                        <form method="post" action="{% url 'gehitu_bezero_datuak' %}">
                             {% csrf_token %}
                             <div class="form-group mt-2">
-                                <input type="number" class="form-control input_form" id="inputTelefonoa"
-                                       placeholder="&#xf007;  Telefonoa" name="telefonoa" required>
+                                <input type="text" class="form-control input_form" id="inputTelefonoa"
+                                       placeholder="&#xf007;  Telefonoa" name="telefonoa" value="{{bezero.telefono_zenbakia}}" required>
                             </div>
                             <div class="form-group">
                                 <input type="text" class="form-control input_form" id="inputHerria"
-                                       placeholder="&#xf007;  Herria" name="herria" required>
+                                       placeholder="&#xf007;  Herria" name="herria" value="{{bezero.herria}}" required>
                             </div>
                             <div class="form-group">
                                 <input type="text" class="form-control input_form" id="inputProbintzia"
-                                       placeholder="&#xf007;  Probintzia" name="probintzia" required>
+                                       placeholder="&#xf007;  Probintzia" name="probintzia" value="{{bezero.probintzia}}" required>
                             </div>
                             <div class="form-group">
                                 <input type="text" class="form-control input_form" id="inputHelbidea"
-                                       placeholder="&#xf0e0;  Helbidea" name="helbidea" required>
+                                       placeholder="&#xf0e0;  Helbidea" name="helbidea" value="{{bezero.helbidea}}" required>
                             </div>
                             <div class="form-group">
                                 <input type="number" class="form-control input_form" id="inputPK"
-                                       placeholder="&#xf023;  PK" name="ok" required>
+                                       placeholder="&#xf023;  PK" name="ok" value="{{bezero.posta_kodea}}" required>
                             </div>
 
-                            <button class="btn btn_jarraitu mt-2" type="submit" onclick="myFunction()">JARRAITU</button>
+                            <button id="jarraitu" class="btn btn_jarraitu mt-2" type="submit">JARRAITU</button>
                             <br><br>
                         </form>
                     </div>
@@ -76,19 +65,6 @@ Erosketa{% endblock title%} {% block content %}
     </section>
     <br><br>
 </div>
-<script>
-function myFunction() {
-  $(".needs-validation").on("submit", function (e) {
-    $(this).addClass("was-validated");
-    e.preventDefault();
-    if (!this.checkValidity()) {
-      e.stopPropagation();
-    } else {
-       window.location='erosketaOrdainketa'
-    }
-  });
-}
-</script>
 
 {% endblock content %}
 {% block javascript %}

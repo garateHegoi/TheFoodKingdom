@@ -25,7 +25,7 @@ def login(request):
                 auth_login(request, user)
                 return redirect('index')
             else:
-                messages.info(request, 'Username OR password is incorrect')
+                messages.warning(request, 'Pasahitza edo erabiltzailea gaizki daude')
 
         return render(request, 'login.html',{'form':form})
 

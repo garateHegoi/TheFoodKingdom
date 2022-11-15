@@ -11,6 +11,7 @@
             <h5>{{user.first_name}}</h5>
             <h5>{{user.last_name}}</h5>
             <h5>{{user.email}}</h5>
+            <h5>Zure puntuak {{bezeroa.puntuak}}</h5>
         </div>
         <a href="{% url 'profilaaldatu' id_erabiltzaile=user.id %}"><i class="fa-solid fa-pen text-dark"></i></a>
     </section>
@@ -20,24 +21,24 @@
     <h5>ESKARIAK</h5>
 </section>
 <section class="eskariak">
-    <div>
+    {% for eros in erosketak %}
+    <div class="eskaria">
         <div class="eskari_info">
             <p>Eskaria #5345A</p>
             <div>
-                <p>23 Feb 2022</p>
-                <p>8:28 PM</p>
+                <p>{{eros.eguna}}</p>
+                <p>{{eros.ordua}}</p>
             </div>
         </div>
-    </div>
-    <div>
-        <div class="eskari_info">
-            <p>Eskaria #6575D</p>
-            <div>
-                <p>17 Mar 2022</p>
-                <p>5:28 AM</p>
-            </div>
+        <div class="mt-3">
+        {% for saski in saskiak %}
+        {% if eros.id == saski.erosketa_id_id%}
+            <p>{{saski.janari_id}}</p>
+        {% endif %}
+        {% endfor %}
         </div>
     </div>
+    {% endfor %}
 </section>
 {% endblock content %}
 {% block javascript %}
