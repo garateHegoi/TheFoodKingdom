@@ -5,26 +5,32 @@
     <div class="container saskia my-5">
         <section class="saski_guztia">
             <h1>Saskia</h1>
-            {% for saski in saskia %}
-            <div class="saski_bakoitza {{saski.id}}">
-                <div>
-                    <img src="{{saski.janari_id.argazki_url}}">
-                </div>
-                <div>
-                    <p>{{saski.janari_id.izena}}&nbsp;</p>
-                    <input type="hidden" class="saski_id" value="{{saski.id}}">
-                    <p> x{{saski.kantitate_kopurua}}&nbsp;</p>
+            <div id="edukia">
+                {% for saski in saskia %}
+                <div class="saski_bakoitza {{saski.id}}">
+                    <div>
+                        <img src="{{saski.janari_id.argazki_url}}">
+                    </div>
+                    <div>
+                        <p>{{saski.janari_id.izena}}&nbsp;</p>
+                        <input type="hidden" class="saski_id" value="{{saski.id}}">
+                        <p> x{{saski.kantitate_kopurua}}&nbsp;</p>
 
-                    <p> = {{saski.guztira}}€</p>
-                   
+                        <p> = {{saski.guztira}}€</p>
+                    
+                    </div>
+                    <div class="d-flex flex-row align-items-center justify-content-around">
+                        <a class="color_blue" href="{% url 'saskia_info' id=saski.id %}"><i class="fa-solid fa-pen"></i></a> 
+                        <a class="ezabatu color_blue" href="" ><i class="fa-solid fa-trash-can"></i></a>
+                    </div>
                 </div>
-                <div class="d-flex flex-row align-items-center justify-content-around">
-                    <a href="{% url 'saskia_info' id=saski.id %}"><i class="fa-solid fa-pen"></i></a> 
-                    <a class="ezabatu" href="" ><i class="fa-solid fa-trash-can"></i></a>
-                </div>
+                {% endfor %}
             </div>
-            {% endfor %}
-            <button class="button"><a class="a_color" href="{% url 'erosketa' %}"><span>Erosi</span></a></button>
+            {% if saskia %}
+            <a id="eros" class="a_color button" href="{% url 'erosketa' %}"><span>EROSI</span></a>
+            {% else %}
+            <h5>Saskia hutsik dago</h5>
+            {% endif %}
         </section>
     </div>
 
@@ -46,9 +52,18 @@
                     dataType:'json',
                     success: function (response) {
                         $("."+response[0].id).remove()
+                        if (isEmpty($('#edukia'))){
+                            alert("Empty")
+                            $("#eros").css("display","none")
+                            $('.saski_guztia').append('<h5>Saskia hutsik dago</h5>');
+                        }
                     },
                 })
             });
+
+            function isEmpty( el ){
+                return !$.trim(el.html())
+            }
         });
     </script>
     
