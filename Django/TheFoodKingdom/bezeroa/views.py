@@ -2,7 +2,7 @@ from django.shortcuts import render, redirect
 from django.contrib.auth.models import User
 from django.contrib.auth.hashers import make_password
 from django.contrib import messages
-from erosketa.models import Erosketak, Saskiak
+from erosketa.models import Erosketak, Saskiak, Bidalketak
 
 import re
 
@@ -20,9 +20,7 @@ def profila(request):
     if erosketak:
         for eros in erosketak:
             saski = Saskiak.objects.filter(erosketa_id=eros.id)
-            print(saski)
             saskiak.extend(saski)
-
         
         return render(request, 'profila.html', {'erosketak': erosketak, 'saskiak': saskiak, 'bezeroa': bezeroa})
     else:

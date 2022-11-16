@@ -54,7 +54,7 @@ def gehitu_saskira(request):
     # Saski guztiak hartu eta guztira kalkulatu
     erosketa = Erosketak.objects.get(bezero_dni=bezeroa, bukatuta=False)
     saskiak = list(Saskiak.objects.filter(erosketa_id=erosketa.id))
-    erosketa.ordaintzeko_guztira = 0
+    erosketa.totala = 0
     for saski in saskiak:
         erosketa.totala += saski.guztira
     erosketa.save()
@@ -239,7 +239,7 @@ def erosketa_bukatu(request):
 
     erosketa.save()
 
-    bezeroa.puntuak=(erosketa.totala*100)/10
+    bezeroa.puntuak+=(erosketa.totala*100)/10
     bezeroa.save()
 
     return redirect('index')

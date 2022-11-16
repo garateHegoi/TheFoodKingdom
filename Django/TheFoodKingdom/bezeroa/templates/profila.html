@@ -23,7 +23,7 @@
     {% for eros in erosketak %}
     <div class="eskaria d-flex flex-column justify-content-center">
         <div class="eskari_info">
-            <p>Eskaria #5345A</p>
+            <p>Eskaria #{{eros.id}}TFK</p>
             <div>
                 <p>{{eros.eguna}}</p>
                 <p>{{eros.ordua}}</p>
@@ -33,14 +33,20 @@
         {% for saski in saskiak %}
         {% if eros.id == saski.erosketa_id_id%}
             <div class="d-flex justify-content-between">
-                <p>{{saski.janari_id}}</p>
-                <p>{{saski.guztira}}</p>
+                <p>{{saski.janari_id}} x {{saski.kantitate_kopurua}}</p>
+                <p>{{saski.guztira}} €</p>
             </div>
             <hr class="mt-0 w-100">
         {% endif %}
         {% endfor %}
         </div>
-        <p class="text-right">{{eros.ordaintzeko_guztira}}</p>
+        
+        <p class="text-right">{{eros.totala}} €</p>
+        <hr class="mt-0 w-100">
+        <div class="d-flex justify-content-between">
+            <p><b>Desk. eta bidalketa kostua eta gero:</b></p>
+            <p class="text-right">{{eros.ordaintzeko_guztira}} €</p>
+        </div>
     </div>
     {% endfor %}
 </section>
