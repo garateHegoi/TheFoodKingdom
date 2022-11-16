@@ -45,12 +45,10 @@ Erosketa laburpena{% endblock title%} {% block content %}
 <script>
     $(document).ready(function(){
         $("#deskontuak").css("display","none")
-        let guztira=parseFloat($("#guztira").text().replace(',', '.'))
+        let guztira=parseFloat($("#guztira").text().replace(',', '.')).toFixed(2);
  
-        // Ajax para los gastos de envios y para los puntos
         let csrftoken = '{{ csrf_token }}';
         $("#trukatu").click(function(){
-            e.preventDefault();
             $.ajax({
             type:'POST',
             headers:{'X-CSRFToken':csrftoken},
@@ -61,10 +59,12 @@ Erosketa laburpena{% endblock title%} {% block content %}
                 $("#deskontuak").css("display","block")
                 $("#deskontua").html(response.deskontua)
                 $("#puntuak").html(response.puntuak)
-                $("#guztira").html(guztira-response.deskontua)
-            },
+                $("#guztira").html((guztira-response.deskontua).toFixed(2))
+            },error:function(response){
+                alert("Zerbait gaizki joan da");
+            }
         })
-        })
+    })
         
 
         

@@ -10,10 +10,9 @@
             </button>
           </div>
 {% endfor %}
-<br>
-<div class="container login_div">
-    <br>
-    <h1 style="text-align:center">Login</h1>
+<div class="container d-flex flex-column align-items-center my-5">
+    <div class="login_div">
+        <h1 style="text-align:center">Login</h1>
     <form action="{% url 'login' %}" method="post">
         <br>
         {% csrf_token %}
@@ -31,9 +30,8 @@
         </div>
 
     </form>
-    <br>
+    </div>
 </div>
-<br>
 
 {% endblock content %}
 {% block javascript %}

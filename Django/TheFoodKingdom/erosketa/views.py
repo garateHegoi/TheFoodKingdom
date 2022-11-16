@@ -148,10 +148,11 @@ def gehitu_ordainketa_datuak(request):
                 if (int(txartela.iraungitze_data[:2]) < current_month and int(txartela.iraungitze_data[3:8]) == current_year) or int(txartela.iraungitze_data[3:8]) < current_year:
                     txartela.delete()
                 elif str(txartela.zenbakia) == txartelaZbk:
-                    if txartela.cvv == int(cvv) and txartela.titularra == titularra and txartela.iraungitze_data == iraungitzeData:
+                    if txartela.cvv ==  cvv and txartela.titularra == titularra and txartela.iraungitze_data == iraungitzeData:
+                        return redirect('erosketarenLaburpena')
+                    else:
                         messages.warning(request, "CVV, titularra edo iraungitze data oker daude!!!")
                         return redirect('erosketaOrdainketa')
-                    else:
                         return redirect('erosketarenLaburpena')
 
             txartelBerriBat = Txartelak(zenbakia=txartelaZbk, iraungitze_data=iraungitzeData, titularra=titularra,
