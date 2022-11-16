@@ -126,30 +126,10 @@ nav.navbar {
   display: inline-block;
 }
 
-.dropdown-content {
-  text-align: center;
-  display: none;
-  position: absolute;
-  min-width: 160px;
-  overflow: auto;
-  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
-  z-index: 1;
-  background-color: #f99245;
-  margin: 0em;
-}
-
 .dropdown-content a {
   color: black;
   padding: 12px 16px;
   text-decoration: none;
-  display: block;
-}
-
-.dropdown a:hover {
-  background-color: #f99245;
-}
-
-.show {
   display: block;
 }
 
@@ -170,17 +150,6 @@ nav.navbar {
   padding: 1em;
   margin-top: 4%;
   border-radius: 0px 0px 20px 20px;
-}
-
-.dropdown-content a {
-  color: black;
-  padding: 12px 16px;
-  text-decoration: none;
-  display: block;
-}
-
-.dropdown a:hover {
-  background-color: #f99245;
 }
 
 .show {
