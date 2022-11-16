@@ -10,16 +10,21 @@ Erosketa laburpena{% endblock title%} {% block content %}
         <div class="container">
             <div class="row">
                 <div class="col-6">
-                    <br>
-                    <h3><u>Bidalketa</u></h3>
-                    <p>{{bidalketa.helbidea}}</p>
-                    <p>{{bidalketa.herria}} {{bezeroa.posta_kodea}}</p>
-                    <p>{{bidalketa.probintzia}}</p>
-                    <p class="erosketaLaburp">Bidalketa kostuak: {{bidalketa.kostua}}€</p>
+                    <div class="erosketaLaburp">
+                        <h3><b>Bidalketa</b></h3>
+                        <p>{{bidalketa.helbidea}}</p>
+                        <p>{{bidalketa.herria}} {{bezeroa.posta_kodea}}</p>
+                        <p>{{bidalketa.probintzia}}</p>
+                    </div>
 
-                    <p>Zure eskaria helduko da: <span>{{bidalketa.ordua}}</span></p>
-                    <p>Zure puntuak: <span id="puntuak">{{bezeroa.puntuak}}</span></p>
+                    <p class="erosketaLaburp"><b>Bidalketa kostuak:</b> {{bidalketa.kostua}}€</p>
+
+                    <p class="erosketaLaburp"><b>Zure eskaria helduko da:</b> <span>{{bidalketa.ordua}}</span></p>
+                    
+                    <div class="erosketaLaburp">
+                        <p><b>Zure puntuak:</b> <span id="puntuak">{{bezeroa.puntuak}}</span></p>
                     <button id="trukatu" class="btn btn_trukatu text-white">Trukatu</button>
+                    </div>
                 </div>
 
                 <div class="col-6 erosketaLaburp"><br>
@@ -27,9 +32,9 @@ Erosketa laburpena{% endblock title%} {% block content %}
                     <p>{{saski.kantitate_kopurua}} x {{saski.janari_id}}&nbsp;&nbsp; ----> &nbsp;&nbsp;{{saski.guztira}}€</p>
                 {% endfor %}
                     <p>- - - - - - - - - - - - - - - - - - - - - - - - - - - - - -</p>
-                    <p>Subtotal: &nbsp;&nbsp; ----> &nbsp;&nbsp;<span id="totala">{{erosketa.totala}}</span><span>€</span></p>
-                    <p>Bidalketa kostuak: &nbsp;&nbsp; ----> &nbsp;&nbsp;<span id="kostuak">{{bidalketa.kostua}}</span>€</p>
-                    <p id="deskontuak">Deskontua: &nbsp;&nbsp; ----> &nbsp;&nbsp; -<span id="deskontua"></span>€</p>
+                    <p><b>Subtotal:</b> &nbsp;&nbsp; ----> &nbsp;&nbsp;<span id="totala">{{erosketa.totala}}</span><span>€</span></p>
+                    <p><b>Bidalketa kostuak:</b> &nbsp;&nbsp; ----> &nbsp;&nbsp;<span id="kostuak">{{bidalketa.kostua}}</span>€</p>
+                    <p id="deskontuak"><b>Deskontua:</b> &nbsp;&nbsp; ----> &nbsp;&nbsp; -<span id="deskontua"></span>€</p>
                     <hr>
                     <h3>TOTALA: <span id="guztira">{{erosketa.ordaintzeko_guztira}}</span>€</h3>
                     <input id="id_erosketa" type="hidden" value="{{erosketa.id}}">
