@@ -13,7 +13,7 @@
 <div class="container d-flex flex-column align-items-center my-5">
     <div class="erregistro_div">
         <h1 style="text-align:center">LOGIN</h1>
-    <form action="{% url 'login' %}" method="post">
+    <form class="text-center" action="{% url 'login' %}" method="post">
         <br>
         {% csrf_token %}
         <div class="form-group ml-2">

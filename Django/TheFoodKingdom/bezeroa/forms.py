@@ -9,7 +9,7 @@ class LoginForm(forms.Form):
     fields = ['username', 'password']
 
     username = forms.CharField(
-        widget=forms.TextInput(attrs={'placeholder': 'Erabiltzailea',  'class': 'form-control input_form'}))
+        widget=forms.TextInput(attrs={'placeholder': '  Erabiltzailea',  'class': 'form-control input_form'}))
     password = forms.CharField(
         widget=forms.PasswordInput(
-            attrs={'placeholder': 'Password', 'class': 'form-control input_form'}))
+            attrs={'placeholder': '  Pasahitza', 'class': 'form-control input_form'}))
