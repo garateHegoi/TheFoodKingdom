@@ -80,9 +80,9 @@ DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
         'NAME': 'thefoodkingdomdb',
-        'USER': 'tfk',
-        'PASSWORD': 'tfk',
-        'HOST': '192.168.73.47',
+        'USER': 'root',
+        'PASSWORD': '',
+        'HOST': 'localhost',
         'PORT': '3306',
     }
 }
