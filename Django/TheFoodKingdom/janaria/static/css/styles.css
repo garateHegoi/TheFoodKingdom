@@ -2,6 +2,15 @@
   font-family: Gabriela, FontAwesome; 
 }
 
+body{
+  min-height: 100vh;
+  margin: 0%;
+  display: grid;
+  grid-template-rows: auto 1fr auto;
+}
+
+
+
 .user_icon {
   max-width: 60px;
   color: #fff;
@@ -202,6 +211,9 @@ nav.navbar {
   margin-bottom: 10px;
   height: 50px;
 }
+.color_blue{
+  color: #0038a8;
+}
 .btn_eros {
   background-color: #0038a8;
   padding:2% 2% 2% 2% !important;
@@ -383,6 +395,7 @@ nav.navbar {
   padding: 20px 40px;
   width: inherit;
   margin-bottom: 15px;
+  border: solid 2px black;
 }
 .saski_bakoitza div p {
   margin: 0;
@@ -441,6 +454,8 @@ nav.navbar {
   background-color: #f99245;
   display: flex;
   justify-content: space-evenly;
+  flex-wrap: wrap;
+  gap: 2em;
   padding: 30px 0px;
 }
 
@@ -512,6 +527,7 @@ nav.navbar {
   flex-direction: column;
   align-items: center;
   flex-basis: 43%;
+  border: solid 2px black;
 }
 
 .produktua_div div.info h4{
@@ -533,16 +549,20 @@ nav.navbar {
   flex-direction: column;
   align-items: center;
   flex-basis: 43%;
+  border: solid 2px black;
 }
 
-.produktua_div div.katitatea div{
+.produktua_div div.katitatea form{
   display: flex;
   align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  gap: 20px;
   margin: 20px 0;
 }
 
-.produktua_div div.katitatea div p{
-  margin: 0 10px;
+.produktua_div div.katitatea form div a:hover{
+  cursor: pointer;
 }
 
 .icon{
@@ -637,9 +657,10 @@ nav.navbar {
 }
 
 .erosketaLaburp{
-    background-color: white;
-    border-radius: 50px;
-    margin-top: 20px;
+  background-color: white;
+  border-radius: 50px;
+  margin-top: 20px;
+  border: solid 2px black;
   padding: 10px 0;
   align-items: center;
 }

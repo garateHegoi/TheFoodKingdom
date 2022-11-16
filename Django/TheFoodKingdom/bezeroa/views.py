@@ -16,14 +16,17 @@ def profila(request):
 
     erosketak = Erosketak.objects.filter(bezero_dni=bezeroa, bukatuta=True)
 
+    saskiak=[]
     if erosketak:
         for eros in erosketak:
-            saskiak = Saskiak.objects.filter(erosketa_id=eros.id)
+            saski = Saskiak.objects.filter(erosketa_id=eros.id)
+            print(saski)
+            saskiak.extend(saski)
 
+        
         return render(request, 'profila.html', {'erosketak': erosketak, 'saskiak': saskiak, 'bezeroa': bezeroa})
     else:
         return render(request, 'profila.html')
-
 
 def profilaaldatu(request, id_erabiltzaile):
     bezeroa = Bezeroak.objects.get(id_erabiltzaile=id_erabiltzaile)

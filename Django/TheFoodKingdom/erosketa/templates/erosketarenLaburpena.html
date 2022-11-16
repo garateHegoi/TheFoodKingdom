@@ -1,8 +1,7 @@
 {% extends "base.html" %} {% load static %} {% block title %}The Food Kingdom |
-Erosketa{% endblock title%} {% block content %}
+Erosketa laburpena{% endblock title%} {% block content %}
 
-<div class="container d-flex flex-column align-items-center my-2">
-    <br><br>
+<div class="container saskia my-5">
     <section class="saski_guztia">
         <h1>EROSTEKO PROZESUA</h1>
         <h5><a>1.Erabiltzailearen datuak</a> &nbsp;<i
@@ -51,6 +50,7 @@ Erosketa{% endblock title%} {% block content %}
         // Ajax para los gastos de envios y para los puntos
         let csrftoken = '{{ csrf_token }}';
         $("#trukatu").click(function(){
+            e.preventDefault();
             $.ajax({
             type:'POST',
             headers:{'X-CSRFToken':csrftoken},

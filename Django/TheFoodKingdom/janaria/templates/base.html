@@ -83,13 +83,12 @@
         <div class="dropdown container">
             {% if user.is_authenticated %}
             <div class="row">
-                <div class="col-9"></div>
-                <div class="col-2">
+                <div class="col-8"></div>
+                <div class="col-3">
                     <div class="d-flex flex-column align-items-center">
                         <img id="user_login" class="dropbtn user_icon" src="{% static 'img/usuario.png'%}">
                         <p class="text-light">{{user.username}}</p>
                     </div>
-                    
                     <div id="myDropdown" class="dropdown-content">
                          <a href="{% url 'profila' %}">Profila</a>
                          <p></p>
