@@ -82,7 +82,7 @@ DATABASES = {
         'NAME': 'thefoodkingdomdb',
         'USER': 'tfk',
         'PASSWORD': 'tfk',
-        'HOST': '192.168.74.47',
+        'HOST': '192.168.73.47',
         'PORT': '3306',
     }
 }
