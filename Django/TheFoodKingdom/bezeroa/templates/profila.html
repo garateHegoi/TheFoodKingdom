@@ -10,7 +10,11 @@
             <h5>{{user.username}}</h5> 
             <h5>{{user.first_name}} {{user.last_name}}</h5>
             <h5>{{user.email}}</h5>
-            <h5>Zure puntuak {{bezeroa.puntuak}}</h5>
+            {% if bezeroa.puntuak > 0 %}
+            <h5>Zure puntuak: {{bezeroa.puntuak}}</h5>
+            {% else %}
+            <h5>Zure puntuak: 0</h5>
+            {% endif %}
         </div>
         <a href="{% url 'profilaaldatu' id_erabiltzaile=user.id %}"><i class="fa-solid fa-pen text-dark"></i></a>
     </section>
